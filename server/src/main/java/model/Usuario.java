@@ -1,9 +1,6 @@
 package model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -24,5 +21,8 @@ public class Usuario {
     private String password;
 
     // Getters y Setters
+
+    @OneToMany
+    private Portafolio portafolio;
 }
 

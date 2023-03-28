@@ -17,5 +17,8 @@ public class Portafolio {
     @ManyToOne
     private Usuario usuario;
 
+    @OneToMany
+    private Habilidad habilidad;
+
     // Getters y Setters
 }
