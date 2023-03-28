@@ -13,9 +13,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nombre;
+    private String nombres;
+
+    private String apellidos;
+
+    private String rol;
 
     private String email;
+
+    private String password;
 
     // Getters y Setters
 }
