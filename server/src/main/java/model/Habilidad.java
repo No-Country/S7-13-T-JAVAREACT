@@ -13,7 +13,7 @@ public class Habilidad {
     private String nombre;
 
     @ManyToOne
-    private Usuario usuario;
+    private Portafolio portafolio;
 
     // Getters y Setters
 }
