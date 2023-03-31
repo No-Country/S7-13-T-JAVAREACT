@@ -1,4 +1,4 @@
-package server;
+package com.portacodes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

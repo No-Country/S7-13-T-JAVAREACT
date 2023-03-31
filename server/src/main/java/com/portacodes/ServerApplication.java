@@ -1,4 +1,4 @@
-package server;
+package com.portacodes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
