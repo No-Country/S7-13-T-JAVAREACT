@@ -1,12 +1,14 @@
-package server.token;
+package com.portacodes.token;
 
 
-import example.hellosecurity.model.entity.User;
+import com.portacodes.model.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 
 @Data
 @Builder

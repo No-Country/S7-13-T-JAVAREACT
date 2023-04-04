@@ -1,11 +1,13 @@
-package server.controller;
+package com.portacodes.controller;
 
-import server.model.entity.Portafolio;
+
+import com.portacodes.model.entity.Portafolio;
+import com.portacodes.model.service.PortafolioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import server.model.service.PortafolioService;
+
 
 import java.util.List;
 

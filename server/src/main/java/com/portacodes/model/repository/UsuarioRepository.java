@@ -1,6 +1,6 @@
-package server.model.repository;
+package com.portacodes.model.repository;
 
-import server.model.entity.Usuario;
+import com.portacodes.model.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

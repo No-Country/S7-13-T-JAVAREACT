@@ -1,11 +1,13 @@
-package server.controller;
+package com.portacodes.controller;
 
-import server.model.entity.Habilidad;
+
+import com.portacodes.model.entity.Habilidad;
+import com.portacodes.model.service.HabilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import server.model.service.HabilidadService;
+
 
 import java.util.List;
 

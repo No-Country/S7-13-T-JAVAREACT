@@ -1,6 +1,7 @@
-package server.model.service;
+package com.portacodes.model.service;
 
-import server.model.entity.Habilidad;
+import com.portacodes.model.entity.Habilidad;
+
 
 import java.util.List;
 

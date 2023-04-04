@@ -1,10 +1,12 @@
-package server.controller;
-import server.model.entity.Usuario;
+package com.portacodes.controller;
+
+import com.portacodes.model.entity.Usuario;
+import com.portacodes.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import server.model.service.UsuarioService;
+
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package server.model.repository;
+package com.portacodes.model.repository;
 
-import server.model.entity.Habilidad;
+import com.portacodes.model.entity.Habilidad;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HabilidadRepository extends JpaRepository<Habilidad, Long> {

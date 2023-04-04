@@ -1,4 +1,4 @@
-package server.model.entity;
+package com.portacodes.model.entity;
 
 public enum Role {
 
