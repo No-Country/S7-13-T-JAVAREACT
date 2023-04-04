@@ -1,6 +1,6 @@
-package server.model.repository;
+package com.portacodes.model.repository;
 
-import example.hellosecurity.model.entity.User;
+import com.portacodes.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,9 +1,11 @@
-package server.model.service;
+package com.portacodes.model.service;
 
-import server.model.entity.Portafolio;
+
+import com.portacodes.model.entity.Portafolio;
+import com.portacodes.model.repository.PortafolioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import server.model.repository.PortafolioRepository;
+;
 
 import java.util.List;
 

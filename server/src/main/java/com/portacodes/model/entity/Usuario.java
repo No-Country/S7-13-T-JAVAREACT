@@ -1,8 +1,10 @@
-package server.model.entity;
+package com.portacodes.model.entity;
+
 
 
 import jakarta.persistence.*;
 import lombok.Data;
+
 
 import java.util.List;
 

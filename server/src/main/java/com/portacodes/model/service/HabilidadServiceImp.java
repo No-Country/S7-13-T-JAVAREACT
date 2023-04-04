@@ -1,15 +1,16 @@
-package server.model.service;
+package com.portacodes.model.service;
 
-import server.model.entity.Habilidad;
+import com.portacodes.model.entity.Habilidad;
+import com.portacodes.model.repository.HabilidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import server.model.repository.HabilidadRepository;
+
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class HabilidadServiceImp implements HabilidadService{
+public class HabilidadServiceImp implements HabilidadService {
 
 
     @Autowired

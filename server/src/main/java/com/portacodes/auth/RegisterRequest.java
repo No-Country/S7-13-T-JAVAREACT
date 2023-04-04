@@ -1,4 +1,4 @@
-package server.auth;
+package com.portacodes.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
