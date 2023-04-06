@@ -2,8 +2,9 @@
 /* import { useUserContext } from "@/context/UserContext"; */
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
-import styles from "../login/Login.module.css";
+import styles from "../register/Register.module.css";
 
 const RegisterForm = () => {
   /*   const { user } = useUserContext(); */
@@ -48,33 +49,71 @@ const RegisterForm = () => {
   };
 
   return (
-    <main>
-      <form className={styles.container} onSubmit={handleSubmit}>
-        <h1>Register on PortaCode</h1>
-        <input
-          name="email"
-          type="email"
-          placeholder="Ingrese su correo electrónico"
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          placeholder="Ingrese una contraseña"
-          type="password"
-          onChange={handleChange}
-        />
-        <span>
-          {mensage
-            ? "Las contraseñas no coinciden"
-            : "Las contraseñas coinciden"}
-        </span>
-        <input
-          name="confirmPassword"
-          placeholder="Repetir contraseña"
-          type="password"
-          onChange={handleChange}
-        />
-        <button>Login</button>
+    <main className={styles.container}>
+      <form className={styles.containerRegister} onSubmit={handleSubmit}>
+        <button className={styles.buttonBack}>
+          <Link href={"/"}>x</Link>
+        </button>
+        <h1>Registro</h1>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="name">
+            Nombre y pellido
+          </label>
+          <input
+            className={styles.input}
+            name="name"
+            type="name"
+            placeholder="Escribir..."
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="email">
+            Correo Electrónico
+          </label>
+          <input
+            className={styles.input}
+            name="email"
+            type="email"
+            placeholder="Ingrese su correo electrónico"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="password">
+            Contraseña
+          </label>
+          <input
+            className={styles.input}
+            name="password"
+            placeholder="Ingrese una contraseña"
+            type="password"
+            onChange={handleChange}
+          />
+          <span>
+            {mensage
+              ? "Las contraseñas no coinciden"
+              : "Las contraseñas coinciden"}
+          </span>
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="confirmPassword">
+            Confirmar Contraseña
+          </label>
+          <input
+            className={styles.input}
+            name="confirmPassword"
+            placeholder="Repetir contraseña"
+            type="password"
+            onChange={handleChange}
+          />
+        </div>
+        <button className={styles.button}>Registrarse</button>
+        <p className={styles.otherOptions}>Otras opciones</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>❤ Google</button>
+          <button className={styles.button}>❤ Github</button>
+        </div>
       </form>
     </main>
   );
