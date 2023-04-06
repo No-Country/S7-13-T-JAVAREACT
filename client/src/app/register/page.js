@@ -52,9 +52,7 @@ const RegisterForm = () => {
     <main className={styles.container}>
       <form className={styles.containerRegister} onSubmit={handleSubmit}>
         <Link href={"/"}>
-          <button className={styles.buttonBack}>
-            x
-          </button>
+          <button className={styles.buttonBack}>x</button>
         </Link>
         <h1>Registro</h1>
         <div className={styles.containerInput}>
@@ -111,7 +109,7 @@ const RegisterForm = () => {
           />
         </div>
         <button className={styles.button}>Registrarse</button>
-          <p className={styles.otherOptions}>Otras Opciones</p>
+        <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
           <button className={styles.button}>❤ Google</button>
           <button className={styles.button}>❤ Github</button>
