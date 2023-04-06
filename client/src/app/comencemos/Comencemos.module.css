@@ -1,0 +1,108 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      221.3deg,
+      rgba(5, 8, 41, 0.2) 15.68%,
+      rgba(13, 28, 175, 0.2) 51.25%,
+      rgba(219, 13, 0, 0.4) 122.19%
+    );
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
+}
+
+.containerStart{
+    width: 60%;
+    height: 80%;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(159, 167, 244, 0.2);
+    border-radius: 12px;
+    position: relative;
+}
+
+.buttonBack {
+    position: absolute;
+    background-color: #b40909;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 4px;
+  }
+.buttonBack:hover {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}
+
+.image{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.link{
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    margin: 1rem;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.25rem
+}
+
+.buttonYellow{
+    width: 100%;
+    margin: 1rem;
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    background-color: #D4C311;
+    color: #050829;
+    font-weight: 700;
+    font-size: 1.25rem
+}
+.button:hover, .buttonYellow:hover {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}

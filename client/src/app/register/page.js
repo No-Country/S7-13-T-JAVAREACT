@@ -51,9 +51,11 @@ const RegisterForm = () => {
   return (
     <main className={styles.container}>
       <form className={styles.containerRegister} onSubmit={handleSubmit}>
-        <button className={styles.buttonBack}>
-          <Link href={"/"}>x</Link>
-        </button>
+        <Link href={"/"}>
+          <button className={styles.buttonBack}>
+            x
+          </button>
+        </Link>
         <h1>Registro</h1>
         <div className={styles.containerInput}>
           <label className={styles.label} htmlFor="name">
@@ -109,7 +111,7 @@ const RegisterForm = () => {
           />
         </div>
         <button className={styles.button}>Registrarse</button>
-        <p className={styles.otherOptions}>Otras opciones</p>
+          <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
           <button className={styles.button}>❤ Google</button>
           <button className={styles.button}>❤ Github</button>
