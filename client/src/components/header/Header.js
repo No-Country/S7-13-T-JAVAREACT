@@ -14,7 +14,7 @@ const Header = () => {
           minutos.
         </h2>
         <div className={styles.div_boton}>
-          <Link href={"/register"}>
+          <Link href={"/comencemos"}>
             <button>Comencemos</button>
           </Link>
         </div>
