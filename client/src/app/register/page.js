@@ -1,14 +1,16 @@
 "use client";
 /* import { useUserContext } from "@/context/UserContext"; */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import styles from "../login/Login.module.css";
 
 const RegisterForm = () => {
   /*   const { user } = useUserContext(); */
-  const [mensage, setMensage] = useState(false);
+  const [token, setToken] = useState("");
+  const [mensage, setMensage] = useState("");
   const [userData, setUserData] = useState({
-    title: "",
+    email: "",
     password: "",
     confirmPassword: "",
   });
@@ -17,14 +19,32 @@ const RegisterForm = () => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    localStorage.setItem("token", token);
+  }, [token]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (userData.password !== userData.confirmPassword) {
-      alert("Las contraseñas no coinciden");
+      setMensage("Las contraseñas no coinciden");
       return;
     }
     console.log(userData);
-    /* router.push("/"); */
+
+    try {
+      const response = await axios.post(
+        "https://portacode2-production.up.railway.app/api/v1/auth/register",
+        userData
+      );
+      const token = response.data.token;
+      setToken(token);
+      console.log(token);
+      // guardar token en localStorage o en el estado de la aplicación
+      // redirigir al usuario a la página de inicio
+    } catch (error) {
+      setMensage("Ha ocurrido un error al registrarse");
+      console.error(error);
+    }
   };
 
   return (
@@ -32,14 +52,14 @@ const RegisterForm = () => {
       <form className={styles.container} onSubmit={handleSubmit}>
         <h1>Register on PortaCode</h1>
         <input
-          name="title"
-          type="text"
-          placeholder="Ingrese nombre de usuario"
+          name="email"
+          type="email"
+          placeholder="Ingrese su correo electrónico"
           onChange={handleChange}
         />
         <input
           name="password"
-          placeholder="Contraseña"
+          placeholder="Ingrese una contraseña"
           type="password"
           onChange={handleChange}
         />
@@ -61,3 +81,5 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
+
+/* /*  */
