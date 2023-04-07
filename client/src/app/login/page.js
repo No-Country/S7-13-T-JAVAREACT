@@ -2,6 +2,7 @@
 import { useUserContext } from "@/context/UserContext";
 import { useState } from "react";
 import styles from "./Login.module.css";
+import Link from "next/link";
 
 const page = () => {
   const { user } = useUserContext();
@@ -49,22 +50,48 @@ const page = () => {
   };
 
   return (
-    <main>
-      <form className={styles.container} onSubmit={handleSubmit}>
-        <h1>Login on PortaCode</h1>
-        <input
-          name="title"
-          type="text"
-          placeholder="Ingrese nombre de usuario"
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          placeholder="Contraseña"
-          type="password"
-          onChange={handleChange}
-        />
-        <button onClick={authenticate}>Login</button>
+    <main className={styles.container}>
+      <form className={styles.containerLogin} onSubmit={handleSubmit}>
+        <Link href={"/"}>
+          <button className={styles.buttonBack}>x</button>
+        </Link>
+        <h1>Iniciar Sesión</h1>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="email">
+            Correo Electrónico
+          </label>
+          <input
+            className={styles.input}
+            name="title"
+            type="text"
+            placeholder="Ingrese nombre de usuario"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="password">
+            Contraseña
+          </label>
+          <input
+            className={styles.input}
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            onChange={handleChange}
+          />
+        </div>
+        <button className={styles.button}>Iniciar Sesión</button>
+        <p className={styles.otherOptions}>Otras Opciones</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>❤ Google</button>
+          <button className={styles.button}>❤ Github</button>
+        </div>
+        <p className={styles.p}>
+          ¿No tienes cuenta?{" "}
+          <Link className={styles.linkRegister} href={"/register"}>
+            ¡Registrate!
+          </Link>
+        </p>
       </form>
     </main>
   );

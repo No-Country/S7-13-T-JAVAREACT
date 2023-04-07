@@ -57,7 +57,7 @@ const RegisterForm = () => {
         <h1>Registro</h1>
         <div className={styles.containerInput}>
           <label className={styles.label} htmlFor="name">
-            Nombre y pellido
+            Nombre y Apellido
           </label>
           <input
             className={styles.input}
@@ -114,6 +114,12 @@ const RegisterForm = () => {
           <button className={styles.button}>❤ Google</button>
           <button className={styles.button}>❤ Github</button>
         </div>
+        <p className={styles.p}>
+          ¿Tienes cuenta?{" "}
+          <Link className={styles.linkRegister} href={"/login"}>
+            ¡Inicia Sesión!
+          </Link>
+        </p>
       </form>
     </main>
   );
