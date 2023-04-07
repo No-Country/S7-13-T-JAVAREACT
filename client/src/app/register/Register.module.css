@@ -119,6 +119,7 @@
   margin: 0.5rem;
   padding: 0.5rem;
   font-weight: 100;
+  text-align: center;
 }
 
 .linkRegister {
@@ -127,4 +128,32 @@
 }
 .linkRegister:hover {
   color: #cccccc;
+}
+
+@media (max-width: 1400px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 976px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 476px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+  .otherOptions::after {
+    width: 40%;
+  }
+
+  .otherOptions::before {
+    width: 40%;
+  }
+  .button {
+    padding: 0.5rem;
+  }
 }

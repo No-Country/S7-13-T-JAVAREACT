@@ -115,7 +115,7 @@ const RegisterForm = () => {
           <button className={styles.button}>❤ Github</button>
         </div>
         <p className={styles.p}>
-          ¿Tienes cuenta?{" "}
+          ¿Ya tienes una cuenta?{" "}
           <Link className={styles.linkRegister} href={"/login"}>
             ¡Inicia Sesión!
           </Link>
