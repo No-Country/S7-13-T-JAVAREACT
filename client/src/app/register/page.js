@@ -51,8 +51,8 @@ const RegisterForm = () => {
   return (
     <main className={styles.container}>
       <form className={styles.containerRegister} onSubmit={handleSubmit}>
-        <Link href={"/"}>
-          <button className={styles.buttonBack}>x</button>
+        <Link href={"/"} className={styles.buttonBack}>
+          x
         </Link>
         <h1>Registro</h1>
         <div className={styles.containerInput}>
@@ -115,7 +115,7 @@ const RegisterForm = () => {
           <button className={styles.button}>❤ Github</button>
         </div>
         <p className={styles.p}>
-          ¿Tienes cuenta?{" "}
+          ¿Ya tienes una cuenta?{" "}
           <Link className={styles.linkRegister} href={"/login"}>
             ¡Inicia Sesión!
           </Link>

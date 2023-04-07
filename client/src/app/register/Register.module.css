@@ -30,13 +30,16 @@
 .buttonBack {
   position: absolute;
   background-color: #b40909;
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   top: 0;
   right: 0;
   margin: 0.5rem;
   border: none;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .buttonBack:hover {
   background-color: #ffffff;
@@ -116,6 +119,7 @@
   margin: 0.5rem;
   padding: 0.5rem;
   font-weight: 100;
+  text-align: center;
 }
 
 .linkRegister {
@@ -124,4 +128,32 @@
 }
 .linkRegister:hover {
   color: #cccccc;
+}
+
+@media (max-width: 1400px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 976px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 476px) {
+  .input {
+    padding: 0.5rem 0.5rem;
+  }
+  .otherOptions::after {
+    width: 40%;
+  }
+
+  .otherOptions::before {
+    width: 40%;
+  }
+  .button {
+    padding: 0.5rem;
+  }
 }

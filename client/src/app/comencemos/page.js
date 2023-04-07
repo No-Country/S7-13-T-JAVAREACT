@@ -9,8 +9,8 @@ const Start = () => {
   return (
     <main className={styles.container}>
       <div className={styles.containerStart}>
-        <Link href={"/"}>
-          <button className={styles.buttonBack}>x</button>
+        <Link href={"/"} className={styles.buttonBack}>
+          x
         </Link>
         <div className={styles.image}>
           <Image src="/img/robot.png" alt="robot" width={384} height={430} />
