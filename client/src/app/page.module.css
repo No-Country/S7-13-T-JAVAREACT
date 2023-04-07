@@ -1,8 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  padding: 6rem;
-  /* min-height: 200vh; */
+   min-height: 100vh; 
   /*   background: linear-gradient(
     180deg,
     #1523b0 0%,

@@ -3,7 +3,9 @@ import styles from "./page.module.css";
 import NavBar from "@/components/NavBar";
 import Slider from "@/components/Slider";
 import CardsLanding from "@/components/cards-landing/CardsLanding";
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import Seccion2 from "@/components/seccion2/Seccion2";
 
 /* const inter = Inter({ subsets: ["latin"] });
  */
@@ -21,8 +23,9 @@ export default function Home() {
       <div className={styles.div}>
         <CardsLanding />
       </div>
-
-      <div className={styles.div_height}></div>
+      <Seccion2 />
+      <Footer />
+      {/*  <div className={styles.div_height}></div> */}
     </main>
   );
 }

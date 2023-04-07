@@ -4,22 +4,42 @@ const CardsLanding = () => {
   return (
     <section className={styles.container}>
       <div>
-        <Image width={300} height={200} src="/img/img4.png" />
+        <Image
+          alt="Imagen de prueba"
+          width={300}
+          height={200}
+          src="/img/img4.png"
+        />
         <p>Rapido</p>
         <p>Descripcion</p>
       </div>
       <div>
-        <Image width={300} height={200} src="/img/img4.png" />
+        <Image
+          alt="Imagen de prueba"
+          width={300}
+          height={200}
+          src="/img/img4.png"
+        />
         <p>Facil de usar</p>
         <p>Descripcion</p>
       </div>
       <div>
-        <Image width={300} height={200} src="/img/img4.png" />
+        <Image
+          alt="Imagen de prueba"
+          width={300}
+          height={200}
+          src="/img/img4.png"
+        />
         <p>Intuitivo</p>
         <p>Descripcion</p>
       </div>
       <div>
-        <Image width={300} height={200} src="/img/img4.png" />
+        <Image
+          alt="Imagen de prueba"
+          width={300}
+          height={200}
+          src="/img/img4.png"
+        />
         <p>Profesional</p>
         <p>Descripcion</p>
       </div>
