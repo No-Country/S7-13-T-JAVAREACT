@@ -128,3 +128,44 @@
 .linkRegister:hover {
   color: #cccccc;
 }
+
+@media (max-width:476px){
+  .containerLogin {
+    width: 80%;
+    min-height: 80%;
+    padding: 0.75rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(159, 167, 244, 0.2);
+    border-radius: 12px;
+    position: relative;
+  }
+  .otherOptions {
+    padding: 0.5rem 0.25rem;
+    margin: 0.5rem 0.25rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: red;
+  }
+  
+  .otherOptions::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    width: 75%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+  
+  .otherOptions::before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 75%;
+    height: 2px;
+    background-color: #ffffff;
+  }
+}
