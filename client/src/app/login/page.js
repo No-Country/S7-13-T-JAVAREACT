@@ -2,8 +2,8 @@
 import { useUserContext } from "@/context/UserContext";
 import { useState } from "react";
 import styles from "./Login.module.css";
+import Link from "next/link";
 
-import { redirect } from "next/navigation";
 const page = () => {
   const { user } = useUserContext();
   console.log(user);
@@ -12,7 +12,8 @@ const page = () => {
 
   const [email, setEmail] = useState("luis@luis.com");
   const [password, setPassword] = useState("123123");
-
+  console.log(setEmail);
+  console.log(setPassword);
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -21,9 +22,6 @@ const page = () => {
     e.preventDefault();
     console.log(data);
   };
-
-  const token = localStorage.getItem("token");
-  console.log(token + "token");
 
   const authenticate = async () => {
     const response = await fetch(
@@ -42,35 +40,61 @@ const page = () => {
     if (result.token) {
       // Guardar el token en el almacenamiento local del navegador
       localStorage.setItem("token", result.token);
-      redirectTo("/logueado");
     }
 
     return data;
   };
 
   return (
-    <main>
-      <form className={styles.container} onSubmit={handleSubmit}>
-        <h1>Login on PortaCode</h1>
-        <input
-          name="email"
-          type="text"
-          placeholder="Ingrese nombre de usuario"
-          onChange={handleChange}
-        />
-        <input
-          name="password"
-          placeholder="Contraseña"
-          type="password"
-          onChange={handleChange}
-        />
+    <main className={styles.container}>
+      <form className={styles.containerLogin} onSubmit={handleSubmit}>
+        <Link href={"/"}>
+          <button className={styles.buttonBack}>x</button>
+        </Link>
+        <h1>Iniciar Sesión</h1>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="email">
+            Correo Electrónico
+          </label>
+          <input
+            className={styles.input}
+            name="title"
+            type="text"
+            placeholder="Ingrese nombre de usuario"
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="password">
+            Contraseña
+          </label>
+          <input
+            className={styles.input}
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            onChange={handleChange}
+          />
+        </div>
         <button
+          className={styles.button}
           onClick={() => {
-            authenticate();
+            authenticate;
           }}
         >
-          Login
+          Iniciar Sesión
         </button>
+        <p className={styles.otherOptions}>Otras Opciones</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>❤ Google</button>
+          <button className={styles.button}>❤ Github</button>
+        </div>
+        <p className={styles.p}>
+          ¿No tienes cuenta?{" "}
+          <Link className={styles.linkRegister} href={"/register"}>
+            ¡Registrate!
+          </Link>
+        </p>
       </form>
     </main>
   );
