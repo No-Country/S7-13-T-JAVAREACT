@@ -5,6 +5,7 @@ import styles from "./Login.module.css";
 import Link from "next/link";
 
 const page = () => {
+  /*
   const { user } = useUserContext();
   console.log(user);
 
@@ -17,7 +18,7 @@ const page = () => {
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data);
