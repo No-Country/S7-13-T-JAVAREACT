@@ -5,7 +5,7 @@ import Slider from "@/components/Slider";
 import CardsLanding from "@/components/cards-landing/CardsLanding";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import Seccion2 from "@/components/seccion2/Seccion2";
+import Seccion2 from "@/components/seccion2/seccion2";
 
 /* const inter = Inter({ subsets: ["latin"] });
  */
