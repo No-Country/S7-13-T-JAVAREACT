@@ -1,10 +1,82 @@
 "use client";
-
 import styles from "./Login.module.css";
 import Link from "next/link";
 
 const page = () => {
 
+  return (
+    <main className={styles.container}>
+      <form className={styles.containerLogin} onSubmit={console.log("handleSubmit")}>
+        <Link href={"/"} className={styles.buttonBack}>
+          x
+        </Link>
+        <h1>Iniciar Sesión</h1>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="email">
+            Correo Electrónico
+          </label>
+          <input
+            className={styles.input}
+            name="title"
+            type="text"
+            placeholder="Ingrese nombre de usuario"
+            onChange={console.log("handleChange")}
+          />
+        </div>
+        <div className={styles.containerInput}>
+          <label className={styles.label} htmlFor="password">
+            Contraseña
+          </label>
+          <input
+            className={styles.input}
+            name="password"
+            placeholder="Contraseña"
+            type="password"
+            onChange={console.log("handleChange")}
+          />
+        </div>
+        <button
+          className={styles.button}
+          onClick={()=>{console.log("autenticado")}}
+        >
+          Iniciar Sesión
+        </button>
+        <p className={styles.otherOptions}>Otras Opciones</p>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button}>❤ Google</button>
+          <button className={styles.button}>❤ Github</button>
+        </div>
+        <p className={styles.p}>
+          ¿No tienes cuenta?{" "}
+          <Link className={styles.linkRegister} href={"/register"}>
+            ¡Registrate!
+          </Link>
+        </p>
+      </form>
+    </main>
+  );
+};
+
+export default page;
+
+
+
+
+
+
+
+
+/*
+
+-----ORIGINAL-----
+
+
+import { useUserContext } from "@/context/UserContext";
+import { useState } from "react";
+import styles from "./Login.module.css";
+import Link from "next/link";
+
+const page = () => {
   const { user } = useUserContext();
   console.log(user);
 
@@ -12,16 +84,37 @@ const page = () => {
 
   const [email, setEmail] = useState("luis@luis.com");
   const [password, setPassword] = useState("123123");
-  console.log(email);
-  console.log(password)
-
+  console.log(setEmail);
+  console.log(setPassword);
   const handleChange = (e) => {
-    /*setData({ ...data, [e.target.name]: e.target.value });*/
-    console.log("click")
+    setData({ ...data, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data);
+  };
+
+  const authenticate = async () => {
+    const response = await fetch(
+      "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
+    //const data = await response.json();
+    const result = await response.json();
+    if (result.token) {
+      // Guardar el token en el almacenamiento local del navegador
+      localStorage.setItem("token", result.token);
+    }
+
+    return data;
   };
 
   return (
@@ -57,6 +150,9 @@ const page = () => {
         </div>
         <button
           className={styles.button}
+          onClick={() => {
+            authenticate;
+          }}
         >
           Iniciar Sesión
         </button>
@@ -77,6 +173,9 @@ const page = () => {
 };
 
 export default page;
+*/
+
+
 
 /*   useEffect(() => {
     fetch("https://portacode2-production.up.railway.app/api/v1/auth/login", {
@@ -89,52 +188,3 @@ export default page;
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, [data]); */
-
-
-/*
-
-import { useUserContext } from "@/context/UserContext";
-import { useState } from "react";
-
-*/
-
-  /*
-  const authenticate = async () => {
-    const response = await fetch(
-      "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ email, password }),
-      }
-    );
-    //   const data = await response.json();
-    const result = await response.json();
-    if (result.token) {
-      // Guardar el token en el almacenamiento local del navegador
-      localStorage.setItem("token", result.token);
-    }
-
-    return data;
-  }
-*/
-
-
-/*
-  const { user } = useUserContext();
-  console.log(user);
-
-  const [data, setData] = useState({});
-
-  const [email, setEmail] = useState("luis@luis.com");
-  const [password, setPassword] = useState("123123");
-  console.log(setEmail);
-  console.log(setPassword);*/
-
-
-  /*onClick={() => {
-            authenticate;
-          }}*/
