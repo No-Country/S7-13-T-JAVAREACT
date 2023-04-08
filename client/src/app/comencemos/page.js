@@ -13,7 +13,7 @@ const Start = () => {
           x
         </Link>
         <div className={styles.image}>
-          <Image src="/img/robot.png" alt="robot" width={384} height={430} />
+          <Image src="/img/robot.svg" alt="robot" width={384} height={430} />
         </div>
         <div className={styles.text}>
           <h1 className={styles.h1question}>¿Has estado aqui antes?</h1>

@@ -17,6 +17,9 @@ const Header = () => {
           <Link href={"/comencemos"}>
             <button>Comencemos</button>
           </Link>
+          <Link href={"/onBoarding"}>
+            <button>OnBoarding</button>
+          </Link>
         </div>
       </div>
       <div>
