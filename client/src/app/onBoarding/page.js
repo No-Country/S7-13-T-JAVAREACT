@@ -9,12 +9,11 @@ import styles from "./OnBoarding.module.css";
 const onBoarding = () => {
   const [porcentaje, setPorcentaje] = useState(0);
   const [page, setPage] = useState(1);
-  //hacer componente por cada estadio
   const renderizar = () => {
     console.log(page);
-    if (page == 1) {
+    if (page === 1) {
       return <LeafOne />;
-    } else if (page == 2) {
+    } else if (page === 2) {
       return <LeafTwo />;
     } else {
       return <LeafThree />;
