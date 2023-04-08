@@ -22,7 +22,7 @@ const page = () => {
     e.preventDefault();
     console.log(data);
   };
-
+/*
   const authenticate = async () => {
     const response = await fetch(
       "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
@@ -35,7 +35,7 @@ const page = () => {
         body: JSON.stringify({ email, password }),
       }
     );
-    /*   const data = await response.json(); */
+    //   const data = await response.json();
     const result = await response.json();
     if (result.token) {
       // Guardar el token en el almacenamiento local del navegador
@@ -43,8 +43,8 @@ const page = () => {
     }
 
     return data;
-  };
-
+  }
+*/
   return (
     <main className={styles.container}>
       <form className={styles.containerLogin} onSubmit={handleSubmit}>
