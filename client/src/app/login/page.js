@@ -14,11 +14,10 @@ const page = () => {
   const [email, setEmail] = useState("luis@luis.com");
   const [password, setPassword] = useState("123123");
   console.log(setEmail);
-  console.log(setPassword);
+  console.log(setPassword);*/
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
-*/
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(data);
@@ -79,9 +78,9 @@ const page = () => {
         </div>
         <button
           className={styles.button}
-          onClick={() => {
+          /*onClick={() => {
             authenticate;
-          }}
+          }}*/
         >
           Iniciar Sesión
         </button>
