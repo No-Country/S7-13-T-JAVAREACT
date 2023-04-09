@@ -1,4 +1,4 @@
-package com.portacodes.exceptions;
+package com.portacodes.exceptions.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

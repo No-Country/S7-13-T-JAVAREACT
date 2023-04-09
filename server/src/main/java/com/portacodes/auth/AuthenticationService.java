@@ -1,15 +1,15 @@
 package com.portacodes.auth;
 
 import com.portacodes.config.JwtService;
-import com.portacodes.exceptions.EmailAlreadyExistsException;
-import com.portacodes.exceptions.InvalidCredentialsException;
+import com.portacodes.exceptions.exception.EmailAlreadyExistsException;
+import com.portacodes.exceptions.exception.InvalidCredentialsException;
 import com.portacodes.model.entity.Role;
 import com.portacodes.model.entity.User;
 import com.portacodes.model.repository.UserRepository;
 import com.portacodes.model.service.EmailVerificationService;
-import com.portacodes.token.Token;
-import com.portacodes.token.TokenRepository;
-import com.portacodes.token.TokenType;
+import com.portacodes.model.token.Token;
+import com.portacodes.model.token.TokenRepository;
+import com.portacodes.model.token.TokenType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

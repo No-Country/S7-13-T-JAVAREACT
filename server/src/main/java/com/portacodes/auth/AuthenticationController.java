@@ -1,14 +1,13 @@
 package com.portacodes.auth;
 
-import com.portacodes.exceptions.EmailAlreadyExistsException;
-import com.portacodes.exceptions.InvalidCredentialsException;
-import com.portacodes.responses.SuccessResponse;
+import com.portacodes.exceptions.exception.EmailAlreadyExistsException;
+import com.portacodes.exceptions.exception.InvalidCredentialsException;
+import com.portacodes.exceptions.responses.SuccessResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

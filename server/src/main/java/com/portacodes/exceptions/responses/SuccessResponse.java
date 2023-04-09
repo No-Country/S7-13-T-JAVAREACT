@@ -1,4 +1,4 @@
-package com.portacodes.responses;
+package com.portacodes.exceptions.responses;
 
 public class SuccessResponse {
     private String message;

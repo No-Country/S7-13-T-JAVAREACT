@@ -1,4 +1,4 @@
-package com.portacodes.exceptions;
+package com.portacodes.exceptions.exception;
 
 public class InvalidCredentialsException extends RuntimeException{
 

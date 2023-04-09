@@ -1,7 +1,7 @@
 package com.portacodes.config;
 
 
-import com.portacodes.token.TokenRepository;
+import com.portacodes.model.token.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
