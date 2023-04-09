@@ -22,9 +22,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class SecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
-    
     private final AuthenticationProvider authenticationProvider;
-    private LogoutHandler logoutHandler;
+    private final LogoutHandler logoutHandler;
 
 
     /**
@@ -38,15 +37,14 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors()
-                .and()
                 .csrf()
                 .disable()
+                .cors()
+                .configurationSource(corsConfigurationSource())
+                .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**", "/swagger-ui.html")
+                .requestMatchers("/api/v1/auth/**")
                 .permitAll()
-                .requestMatchers(HttpMethod.GET,"/portacodes/api/usuarios/").hasAnyRole( "ADMIN", "USER")
-                .requestMatchers(HttpMethod.POST,"/portacodes/api/usuarios/").hasAnyRole( "ADMIN")
                 .anyRequest()
                 .authenticated()
                 .and()

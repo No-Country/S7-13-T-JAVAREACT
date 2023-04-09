@@ -1,5 +1,7 @@
 package com.portacodes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.portacodes.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,16 +20,14 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "users")
+@Table(name = "user")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     private String nombres;
-
-    private String apellidos;
 
     private String email;
 
@@ -38,6 +38,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToMany(mappedBy = "user")
+    @JsonBackReference
+    private List<Token> tokens;
 
 
     @Override

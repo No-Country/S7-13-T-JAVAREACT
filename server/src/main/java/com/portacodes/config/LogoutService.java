@@ -16,20 +16,12 @@ public class LogoutService implements LogoutHandler {
 
     private final TokenRepository tokenRepository;
 
-    /**
-     * Invalida y revoca el token de autenticación en la base de datos al momento en que se realiza la solicitud de
-     * cierre de sesión.
-     *
-     * @param request        HttpServletRequest de la solicitud HTTP
-     * @param response       HttpServletResponse de la respuesta HTTP
-     * @param authentication Objeto Authentication que representa la autenticación actual del usuario
-     */
+
     @Override
-    public void logout(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            Authentication authentication
-    ) {
+    public void logout(HttpServletRequest request,
+                       HttpServletResponse response,
+                       Authentication authentication) {
+
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {

@@ -1,4 +1,4 @@
-package com.portacodes.controller.demo;
+package com.portacodes.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/demo-controller")
+@RequestMapping("/api/demo-controller")
 @Tag(name = "Demo", description = "Demo Controller" )
 public class DemoController {
 
