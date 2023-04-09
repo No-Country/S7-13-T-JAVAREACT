@@ -23,7 +23,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <Image src="/img/robot.png" alt="robot" width={286} height={300} />
+        <Image src="/img/robotHeader.svg" alt="robot" width={286} height={300} />
       </div>
     </section>
   );
