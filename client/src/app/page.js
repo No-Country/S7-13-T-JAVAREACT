@@ -6,6 +6,8 @@ import CardsLanding from "@/components/cards-landing/CardsLanding";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Seccion2 from "@/components/seccion2/seccion2";
+import PreciosLanding from "@/components/precios-landing/PreciosLanding";
+
 
 /* const inter = Inter({ subsets: ["latin"] });
  */
@@ -24,6 +26,9 @@ export default function Home() {
         <CardsLanding />
       </div>
       <Seccion2 />
+      <div>
+        <PreciosLanding/>
+      </div>
       <Footer />
       {/*  <div className={styles.div_height}></div> */}
     </main>

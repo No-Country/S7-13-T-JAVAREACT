@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import Link from "next/link";
 import LeafOne from "@/components/onBoard/LeafOne";
 import LeafTwo from "@/components/onBoard/LeafTwo";
@@ -10,12 +10,11 @@ const onBoarding = () => {
   const [porcentaje, setPorcentaje] = useState(0);
   const [page, setPage] = useState(1);
   const renderizar = () => {
-    console.log(page);
     if (page === 1) {
       return <LeafOne />;
     } else if (page === 2) {
       return <LeafTwo />;
-    } else {
+    } else{
       return <LeafThree />;
     }
   };
