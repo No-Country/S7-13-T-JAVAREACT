@@ -1,4 +1,4 @@
-package com.portacodes.model.token;
+package com.portacodes.token;
 
 public enum TokenType {
     BEARER

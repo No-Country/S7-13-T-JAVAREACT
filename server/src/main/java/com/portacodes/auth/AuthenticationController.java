@@ -1,8 +1,10 @@
 package com.portacodes.auth;
 
-import com.portacodes.exceptions.exception.EmailAlreadyExistsException;
-import com.portacodes.exceptions.exception.InvalidCredentialsException;
-import com.portacodes.exceptions.responses.SuccessResponse;
+
+
+import com.portacodes.exceptions.EmailAlreadyExistsException;
+import com.portacodes.exceptions.InvalidCredentialsException;
+import com.portacodes.responses.SuccessResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

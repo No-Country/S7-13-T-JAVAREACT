@@ -1,7 +1,8 @@
 package com.portacodes.model.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.portacodes.model.token.Token;
+import com.portacodes.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,7 @@
 package com.portacodes.controller;
 
-import com.portacodes.exceptions.exception.ResourceNotFoundException;
+
+import com.portacodes.exceptions.ResourceNotFoundException;
 import com.portacodes.model.DTO.UserDTO;
 import com.portacodes.model.DTO.UserIdDTO;
 import com.portacodes.model.entity.User;
