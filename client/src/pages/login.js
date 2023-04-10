@@ -29,7 +29,7 @@ const page = () => {
         password,
       });
       console.log(data);
-      router.push("/logueado");
+      router.push("/onboarding");
     } catch (error) {
       console.log(error);
     }
