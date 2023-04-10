@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 
-import styles from "../register/Register.module.css";
+import styles from "./Register.module.css";
 
 const RegisterForm = () => {
   /*   const { user } = useUserContext(); */
