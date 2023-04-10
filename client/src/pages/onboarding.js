@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import LeafOne from "@/components/onBoard/LeafOne";
 import LeafTwo from "@/components/onBoard/LeafTwo";
@@ -14,7 +14,7 @@ const onBoarding = () => {
       return <LeafOne />;
     } else if (page === 2) {
       return <LeafTwo />;
-    } else{
+    } else {
       return <LeafThree />;
     }
   };

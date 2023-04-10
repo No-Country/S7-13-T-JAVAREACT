@@ -1,182 +1,183 @@
-.container{
-    background: linear-gradient(260.29deg, rgba(115, 127, 255, 0.5) 0%, rgba(205, 166, 189, 0.5) 45.59%, rgba(255, 211, 146, 0.5) 100%);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 0;
+.container {
+  background: linear-gradient(
+    260.29deg,
+    rgba(115, 127, 255, 0.5) 0%,
+    rgba(205, 166, 189, 0.5) 45.59%,
+    rgba(255, 211, 146, 0.5) 100%
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
 }
 
-.containerInfo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    position: relative;
+.containerInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
 }
 
-.h1{
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 700;
+.h1 {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 37px;
+  margin-bottom: 2rem;
+}
+
+.containerPrice {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.boxPrice {
+  min-width: 50%;
+  min-height: 50%;
+  background: #050829;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.price {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 158px;
+}
+
+.containerText {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ul {
+  list-style: circle;
+  text-align: flex-start;
+  padding: 1rem 2rem;
+}
+
+.li {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0.5rem 0;
+}
+
+.containerButton {
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.buttonYellow {
+  background: #d4c311;
+  color: #181818;
+  position: absolute;
+  bottom: 5%;
+  right: 25%;
+  width: 75%;
+  height: 50px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.buttonYellow:hover {
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 950px) {
+  .h1 {
     font-size: 28px;
-    line-height: 37px;
-    margin-bottom: 2rem;
+  }
 
-}
+  .containerPrice {
+    width: 50%;
+  }
 
-.containerPrice{
-    width: 30%;
+  .containerText {
+    width: 50%;
+    padding: 0.5rem 1rem;
+  }
+
+  .containerButton {
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    margin: .5rem;
-    padding: .5rem;
-}
-
-.boxPrice{
-    min-width: 50%;
-    min-height: 50%;
-    background: #050829;
-    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
-    border-radius: 32px;
-    text-align: center;
-    padding: .5rem;
-}
-
-.p{
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 33px;
-    text-align: center;
-}
-
-.price{
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 120px;
-    line-height: 158px;
-}
-
-.containerText{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.ul{
-    list-style:circle;
-    text-align: start;
-    padding: 1rem 2rem;
-}
-
-.li{
-    font-family: 'Roboto Slab';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21px;
-    margin: .5rem 0;
-}
-
-.containerButton{
-    width: 25%;
-    height: 100%;
-    position:absolute;
     right: 0;
     bottom: 0;
+  }
+
+  .buttonYellow {
+    bottom: -15%;
+    width: 25%;
+  }
+}
+
+@media (max-width: 550px) {
+  .h1 {
+    font-size: 28px;
+  }
+
+  .containerInfo {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
 
-}
+  .containerPrice {
+    width: 100%;
+  }
 
-.buttonYellow{
-    background: #D4C311;
-    color: #181818;
-    position: absolute;
-    bottom: 5%;
-    right: 25%;
-    width: 75%;
-    height: 50px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    padding: .5rem;
-}
+  .containerText {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+  .containerButton {
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+  }
 
-.buttonYellow:hover{
-    background-color: #f5f5f5;
-}
-
-@media (max-width:950px){
-
-    .h1{
-        font-size: 28px;
-    }
-
-    .containerPrice{
-        width: 50%;
-    }
-
-    .containerText{
-        width: 50%;
-        padding: .5rem 1rem;
-    }
-
-    .containerButton{
-        width: 100%;
-        height: 100%;
-        right: 0;
-        bottom: 0;
-    }
-
-    .buttonYellow{
-        bottom: -15%;
-        width: 25%;
-    }
-}
-
-@media (max-width:550px){
-
-    .h1{
-        font-size: 28px;
-    }
-
-    .containerInfo{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        position: relative;
-    }
-
-    .containerPrice{
-        width: 100%;
-    }
-
-    .containerText{
-        width: 100%;
-        padding: .5rem 1rem;
-    }
-    .containerButton{
-        width: 100%;
-        height: 100%;
-        right: 0;
-        bottom: 0;
-    }
-
-    .buttonYellow{
-        bottom: -5%;
-        min-width: 50%;
-    }
+  .buttonYellow {
+    bottom: -5%;
+    min-width: 50%;
+  }
 }

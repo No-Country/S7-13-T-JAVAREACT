@@ -45,7 +45,7 @@ export default function Home() {
           <CardsLanding />
         </div>
         <Seccion2 />
-        <PreciosLanding/>
+        <PreciosLanding />
         <Footer />
         {/*  <div className={styles.div_height}></div> */}
       </main>
