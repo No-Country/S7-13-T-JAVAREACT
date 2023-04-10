@@ -3,9 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "../comencemos/Comencemos.module.css";
+import styles from "./Comencemos.module.css";
 
-const Start = () => {
+const Comencemos = () => {
   return (
     <main className={styles.container}>
       <div className={styles.containerStart}>
@@ -32,4 +32,4 @@ const Start = () => {
     </main>
   );
 };
-export default Start;
+export default Comencemos;
