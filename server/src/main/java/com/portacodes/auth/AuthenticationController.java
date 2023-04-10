@@ -2,6 +2,7 @@ package com.portacodes.auth;
 
 
 
+
 import com.portacodes.exceptions.EmailAlreadyExistsException;
 import com.portacodes.exceptions.InvalidCredentialsException;
 import com.portacodes.responses.SuccessResponse;
@@ -32,9 +33,10 @@ public class AuthenticationController {
         try {
             AuthenticationResponse response = service.register(request);
             String message = "Usuario creado con éxito";
-            return ResponseEntity.ok(new SuccessResponse(message));
+            return ResponseEntity.ok(new SuccessResponse(message, response));
         } catch (EmailAlreadyExistsException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("El correo electrónico ya existe en la base de datos.");
+            String message = "El correo electrónico ya existe en la base de datos.";
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ErrorResponse(message));
         }
     }
 
@@ -50,9 +52,11 @@ public class AuthenticationController {
             AuthenticationResponse response = service.authenticate(request);
             return ResponseEntity.ok(response);
         } catch (InvalidCredentialsException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales inválidas");
+            String message = "Credenciales inválidas";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ErrorResponse(message));
         } catch (UsernameNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email inválido");
+            String message = "Email inválido";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ErrorResponse(message));
         }
     }
 
