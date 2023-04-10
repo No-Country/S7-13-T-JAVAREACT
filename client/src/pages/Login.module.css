@@ -1,0 +1,127 @@
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    221.3deg,
+    rgba(5, 8, 41, 0.2) 15.68%,
+    rgba(13, 28, 175, 0.2) 51.25%,
+    rgba(219, 13, 0, 0.4) 122.19%
+  );
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
+}
+
+.containerLogin {
+  width: 60%;
+  min-height: 80%;
+  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(159, 167, 244, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+
+.buttonBack {
+  position: absolute;
+  background-color: #b40909;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+.buttonBack:hover {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.containerInput {
+  padding: 1rem;
+  min-width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  width: 100%;
+  padding: 0.25rem 0;
+  justify-content: start;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  background-color: transparent;
+}
+
+.otherOptions {
+  padding: 0.5rem 0.25rem;
+  margin: 0.5rem 0.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.otherOptions::after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.otherOptions::before {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.buttonContainer {
+  min-width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button {
+  padding: 0.75rem;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  margin: 0 1rem;
+}
+.button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+}
+
+.p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 100;
+}
+
+.linkRegister {
+  font-weight: 700;
+  margin: 0 0.5rem;
+}
+.linkRegister:hover {
+  color: #cccccc;
+}
