@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <>
       <div>
+        {/* SI existe la session actual con un ususario autenticado?  */}
         {session ? (
           <div>
             <h1>{session.user.name}</h1>
@@ -49,26 +50,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-/*Obtengo los datos de usuario desde el backend
-export const getServerSideProps = async (context) => {
-  const session = await getSession(context);
-  return {
-    props: {
-      session: session,
-    },
-  };
-}; */
-
-/*  
-Obtengo los datos de usuario desde el front
-const [user, setUser] = useState("asd");
-  useEffect(() => {
-    (async () => {
-      const session = await getSession();
-      setUser(session.user);
-    })();
-  }, []);
-  return <>{user && JSON.stringify(user)}</>; */
