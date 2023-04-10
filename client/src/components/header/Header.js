@@ -16,6 +16,8 @@ const Header = () => {
         <div className={styles.div_boton}>
           <Link href={"/comencemos"}>
             <button>Comencemos</button>
+          </Link><Link href={"/OnBoarding"}>
+            <button>OnBoarding</button>
           </Link>
         </div>
       </div>
