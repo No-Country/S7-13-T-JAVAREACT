@@ -10,6 +10,7 @@ const register = () => {
   /*   const { user } = useUserContext(); */
   const [token, setToken] = useState("");
   const [mensage, setMensage] = useState("");
+  const [backResponse, setBackResponse] = useState("");
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -34,10 +35,13 @@ const register = () => {
 
     try {
       const response = await axios.post(
-        "https://portacode2-production.up.railway.app/api/v1/auth/register",
+        "https://portacode.up.railway.app/api/v1/auth/register",
         userData
       );
       const token = response.data.token;
+      /* Este mensaje tenemos que mostrarlo en pantalla para indicar si el usuario se creo bien */
+      const respuestaBack = JSON.stringify(response.data.message);
+      setBackResponse(respuestaBack);
       setToken(token);
       console.log(token);
       // guardar token en localStorage o en el estado de la aplicación
@@ -109,6 +113,10 @@ const register = () => {
           />
         </div>
         <button className={styles.button}>Registrarse</button>
+      </form>
+      {/* Hay que estilizar este div  */}
+      <div>{backResponse ? backResponse : ""}</div>
+      <div>
         <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
           <button className={styles.button}>❤ Google</button>
@@ -120,7 +128,7 @@ const register = () => {
             ¡Inicia Sesión!
           </Link>
         </p>
-      </form>
+      </div>
     </main>
   );
 };

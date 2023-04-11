@@ -1,7 +1,9 @@
+import { signOut, useSession } from "next-auth/react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
 const NavBar = () => {
+  const { data: session, status } = useSession();
   return (
     <nav className={styles.nav}>
       <div className={styles.menu}>
@@ -24,14 +26,35 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
-      <div className={styles.botones}>
+      <div>
+        {status === "authenticated" ? (
+          <div className={styles.botones}>
+            <p>Hola! {session.user.name}</p>
+            <Link href={"/perfil"}>
+              <button>Ir a mi perfil</button>
+            </Link>
+            <button onClick={() => signOut()}>Cerrar Sesión</button>
+          </div>
+        ) : (
+          <div className={styles.botones}>
+            <Link href={"/register"}>
+              <button>Registrarme</button>
+            </Link>
+            <Link href={"/login"}>
+              <button>Iniciar Sesión</button>
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {/* <div className={styles.botones}>
         <Link href={"/register"}>
           <button>Registrarme</button>
         </Link>
         <Link href={"/login"}>
           <button>Iniciar Sesión</button>
         </Link>
-      </div>
+      </div> */}
     </nav>
   );
 };

@@ -3,15 +3,17 @@
 import { useState } from "react";
 import styles from "./Login.module.css";
 import Link from "next/link";
-import { signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const page = () => {
-  /* const { user } = useUserContext();
-  console.log(user); */
   const router = useRouter();
   /*   const [data, setData] = useState({});
    */
+  const { data: session, status } = useSession();
+  if (status === "authenticated") {
+    router.push("/onboarding");
+  }
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   console.log(setEmail);
@@ -103,6 +105,7 @@ const page = () => {
         </p>
       </form>
       <button onClick={() => signIn("github")}>Sign in with GitHub</button>
+      <button onClick={() => signIn("google")}>Sign in with Google</button>
       <button onClick={() => signOut()}>Sign out </button>
     </main>
   );

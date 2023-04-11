@@ -14,10 +14,9 @@ export default function Home() {
 
   const { data: session, status } = useSession();
   console.log(session, status);
-  if (status === "loading") return <h1>Loading...</h1>;
-  if (status === "unauthenticated") {
-    router.push("/login");
-  }
+  if (status === "loading")
+    return <h1>Loading... ACA TENEMOS QUE PONER UN LOADING....</h1>;
+
   return (
     <>
       <div>
@@ -45,7 +44,7 @@ export default function Home() {
           <CardsLanding />
         </div>
         <Seccion2 />
-        <PreciosLanding/>
+        <PreciosLanding />
         <Footer />
         {/*  <div className={styles.div_height}></div> */}
       </main>
