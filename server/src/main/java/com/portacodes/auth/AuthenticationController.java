@@ -5,6 +5,7 @@ package com.portacodes.auth;
 
 import com.portacodes.exceptions.EmailAlreadyExistsException;
 import com.portacodes.exceptions.InvalidCredentialsException;
+import com.portacodes.responses.ErrorResponse;
 import com.portacodes.responses.SuccessResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
