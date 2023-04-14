@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+
 export const authOptions = {
   // Configure one or more authentication providers
   session: {
@@ -37,6 +38,7 @@ export const authOptions = {
             body: JSON.stringify(payload),
           }
         );
+
         const user = await res.json();
         console.log(user);
         // If no error and we have user data, return it
@@ -49,5 +51,18 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
+  callbacks: {
+    async session({ session, token }) {
+      session.user = token.user;
+      session.name = token.user.name;
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.user = user;
+      }
+      return token;
+    },
+  },
 };
 export default NextAuth(authOptions);
