@@ -1,6 +1,6 @@
 "use client";
 /* import { useUserContext } from "@/context/UserContext"; */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Login.module.css";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -14,8 +14,10 @@ const page = () => {
   if (status === "authenticated") {
     router.push("/onboarding");
   }
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
   console.log(setEmail);
   console.log(setPassword);
   /*   const handleChange = (e) => {
@@ -31,32 +33,12 @@ const page = () => {
         password,
       });
       console.log(data);
+      setUser(data);
       router.push("/onboarding");
     } catch (error) {
       console.log(error);
     }
   };
-
-  /* const authenticate = async () => {
-    const response = await fetch(
-      "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ email, password }),
-      }
-    );
-    
-    const result = await response.json();
-    if (result.token) {
-      localStorage.setItem("token", result.token);
-    }
-
-    return data;
-  }; */
 
   return (
     <main className={styles.container}>
@@ -124,3 +106,23 @@ export default page;
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, [data]); */
+/* const authenticate = async () => {
+    const response = await fetch(
+      "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
+    
+    const result = await response.json();
+    if (result.token) {
+      localStorage.setItem("token", result.token);
+    }
+
+    return data;
+  }; */
