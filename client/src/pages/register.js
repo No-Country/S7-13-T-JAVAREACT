@@ -1,21 +1,24 @@
 "use client";
-/* import { useUserContext } from "@/context/UserContext"; */
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 
 import styles from "./Register.module.css";
+import { useRouter } from "next/router";
 
 const register = () => {
-  /*   const { user } = useUserContext(); */
+  const router = useRouter();
   const [token, setToken] = useState("");
   const [mensage, setMensage] = useState("");
+  const [backResponse, setBackResponse] = useState("");
   const [userData, setUserData] = useState({
+    nombre: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
-  console.log(setMensage);
+
   const handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
@@ -30,18 +33,24 @@ const register = () => {
       setMensage("Las contraseñas no coinciden");
       return;
     }
-    console.log(userData);
-
+    /*   let userDataTest = {
+      firstname: "nombre test",
+      email: "aaasdg@asdfg.com",
+      password: "test",
+      confirmPassword: "test",
+    }; */
     try {
+      console.log(userData);
       const response = await axios.post(
-        "https://portacode2-production.up.railway.app/api/v1/auth/register",
+        "https://portacode.up.railway.app/api/v1/auth/register",
         userData
       );
       const token = response.data.token;
-      setToken(token);
       console.log(token);
-      // guardar token en localStorage o en el estado de la aplicación
-      // redirigir al usuario a la página de inicio
+      /* Este mensaje tenemos que mostrarlo en pantalla para indicar si el usuario se creo bien */
+      const respuestaBack = JSON.stringify(response.data.message);
+      setBackResponse(respuestaBack);
+      setToken(token);
     } catch (error) {
       setMensage("Ha ocurrido un error al registrarse");
       console.error(error);
@@ -61,7 +70,7 @@ const register = () => {
           </label>
           <input
             className={styles.input}
-            name="name"
+            name="nombre"
             type="name"
             placeholder="Escribir..."
             onChange={handleChange}
@@ -109,6 +118,10 @@ const register = () => {
           />
         </div>
         <button className={styles.button}>Registrarse</button>
+      </form>
+      {/* Hay que estilizar este div  */}
+      <div>{backResponse ? backResponse : ""}</div>
+      <div>
         <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
           <button className={styles.button}>❤ Google</button>
@@ -120,7 +133,7 @@ const register = () => {
             ¡Inicia Sesión!
           </Link>
         </p>
-      </form>
+      </div>
     </main>
   );
 };

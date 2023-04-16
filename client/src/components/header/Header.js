@@ -1,8 +1,19 @@
 import styles from "./header.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const handleComencemos = () => {
+    if (status === "authenticated") {
+      router.push("/formDatos");
+    } else {
+      router.push("/login");
+    }
+  };
   return (
     <section id="home" className={styles.container}>
       <div className={styles.container_right}>
@@ -14,10 +25,9 @@ const Header = () => {
           minutos.
         </h2>
         <div className={styles.div_boton}>
-          <Link href={"/comencemos"}>
-            <button>Comencemos</button>
-          </Link>
-          <Link href={"/onboarding"}>
+          <button onClick={handleComencemos}>Comencemos</button>
+
+          <Link href={"/OnBoarding"}>
             <button>OnBoarding</button>
           </Link>
         </div>

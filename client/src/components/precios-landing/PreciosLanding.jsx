@@ -17,7 +17,8 @@ const PreciosLanding = () => {
             Con nuestro plan premium podrás acceder a todas las funciones de
             PortaCode
           </p>
-          <p className={styles.p}>
+          {/* Cambie la etiqueta P por que no puede contener una lista UL , Cris*/}
+          <span className={styles.p}>
             <ul className={styles.ul}>
               <li className={styles.li}>
                 Todos los componentes para tus diseños
@@ -30,7 +31,7 @@ const PreciosLanding = () => {
                 Asesoramiento especial de nuestro equipo
               </li>
             </ul>
-          </p>
+          </span>
         </div>
         <div className={styles.containerButton}>
           <Link href={"/"}>
