@@ -1,6 +1,17 @@
+import { useSession } from "next-auth/react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/router";
 const LeafOne = () => {
+  const router = useRouter();
+  const { data: session, status } = useSession();
+  if (status === "unauthenticated") {
+    router.push("/login");
+  }
+  console.log(session, status);
+  const [stack, setStack] = useState([]);
+  console.log(stack);
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
@@ -19,6 +30,7 @@ const LeafOne = () => {
             Para comenzar, ¿A qué te dedicas?
           </label>
           <input
+            onChange={(e) => setStack(e.target.value)}
             className={styles.input}
             name="title"
             type="text"

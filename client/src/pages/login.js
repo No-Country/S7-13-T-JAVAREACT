@@ -28,7 +28,7 @@ const page = () => {
     e.preventDefault();
     try {
       const data = await signIn("credentials", {
-        redirect: true,
+        redirect: false,
         email,
         password,
       });
