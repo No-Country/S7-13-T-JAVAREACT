@@ -22,9 +22,8 @@ export const authOptions = {
     CredentialsProvider({
       async authorize(credentials, req) {
         const { email, password } = credentials;
-
         const payload = {
-          email: email, // make sure this field is mapped correctly
+          email: email,
           password: password,
         };
         const res = await fetch(
