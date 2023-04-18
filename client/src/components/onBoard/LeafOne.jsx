@@ -3,13 +3,13 @@ import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { handleStacksServer } from "@/pages/api/auth/user";
 const LeafOne = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
   if (status === "unauthenticated") {
     router.push("/login");
   }
-  console.log(session, status);
   const [stack, setStack] = useState([]);
   console.log(stack);
   return (
@@ -35,7 +35,15 @@ const LeafOne = () => {
             name="title"
             type="text"
             placeholder="Ej: Backend Developer, Frontend Developer, ..."
+            value={stack}
           />
+          <button
+            onClick={() => handleStacksServer(stack)}
+            className={styles.button}
+            type="submit"
+          >
+            Guardar
+          </button>
         </div>
       </div>
     </div>
