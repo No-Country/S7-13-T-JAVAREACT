@@ -13,7 +13,7 @@ const register = () => {
   const [mensage, setMensage] = useState("");
   const [backResponse, setBackResponse] = useState("");
   const [userData, setUserData] = useState({
-    nombre: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -70,7 +70,7 @@ const register = () => {
           </label>
           <input
             className={styles.input}
-            name="nombre"
+            name="name"
             type="name"
             placeholder="Escribir..."
             onChange={handleChange}

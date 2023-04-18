@@ -1,6 +1,10 @@
+import { useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
+import { handleSkillsServer } from "@/pages/api/auth/user";
 const LeafTwo = () => {
+  const [skills, setSkills] = useState([]);
+  console.log(typeof skills);
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
@@ -19,12 +23,22 @@ const LeafTwo = () => {
             ¿Qué tecnologías utilizas? ¡Agrega todas las opciones que quieras!
             Yo hago el resto.
           </label>
+
           <input
             className={styles.input}
-            name="title"
+            name="skills"
             type="text"
             placeholder="Ej: SpringBoot, React, ..."
+            value={skills}
+            onChange={(e) => setSkills([e.target.value])}
           />
+          <button
+            onClick={() => handleSkillsServer(skills)}
+            className={styles.button}
+            type="submit"
+          >
+            Guardar
+          </button>
         </div>
       </div>
     </div>

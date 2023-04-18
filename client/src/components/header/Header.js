@@ -9,7 +9,7 @@ const Header = () => {
   const router = useRouter();
   const handleComencemos = () => {
     if (status === "authenticated") {
-      router.push("/formDatos");
+      router.push("/onboarding");
     } else {
       router.push("/login");
     }
@@ -25,10 +25,8 @@ const Header = () => {
           minutos.
         </h2>
         <div className={styles.div_boton}>
-          <button onClick={handleComencemos}>Comencemos</button>
-
           <Link href={"/OnBoarding"}>
-            <button>OnBoarding</button>
+            <button onClick={handleComencemos}>Comencemos</button>
           </Link>
         </div>
       </div>
