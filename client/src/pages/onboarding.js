@@ -1,9 +1,10 @@
 "use client";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import LeafOne from "@/components/onBoard/LeafOne";
 import LeafTwo from "@/components/onBoard/LeafTwo";
 import LeafThree from "@/components/onBoard/LeafThree";
+import LeafPhoto from "@/components/onBoard/LeafPhoto";
 import styles from "./OnBoarding.module.css";
 
 const onBoarding = () => {
@@ -13,14 +14,16 @@ const onBoarding = () => {
     if (page === 1) {
       return <LeafOne />;
     } else if (page === 2) {
+      return <LeafPhoto />;
+    } else if (page === 3) {
       return <LeafTwo />;
-    } else{
+    } else if (page === 4) {
       return <LeafThree />;
     }
   };
   useEffect(() => {
     renderizar();
-    setPorcentaje(33 * (page - 1));
+    setPorcentaje(25 * (page - 1));
   }, [page]);
 
   return (
@@ -28,7 +31,7 @@ const onBoarding = () => {
       {renderizar()}
       <div className={styles.containerNavigation}>
         <div className={styles.containerButton}>
-          {page !== 3 ? (
+          {page !== 4 ? (
             <>
               <button
                 onClick={() => {

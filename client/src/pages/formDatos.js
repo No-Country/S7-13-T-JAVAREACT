@@ -14,7 +14,6 @@ function ProjectForm() {
       console.log(`Nombre del proyecto: ${name}`);
       console.log(`Enlace del proyecto: ${link}`);
       console.log(`Descripción del proyecto: ${description}`);
-      
     } catch (error) {
       console.error(error);
     } finally {

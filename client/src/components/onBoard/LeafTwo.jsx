@@ -8,7 +8,7 @@ const LeafTwo = () => {
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
-        <Image src="/img/robot.png" alt="robot" width={384} height={430} />
+        <Image src="/img/robotHello.png" alt="robot" width={384} height={430} />
       </div>
       <div className={styles.text}>
         <h1 className={styles.h1Welcome}>
