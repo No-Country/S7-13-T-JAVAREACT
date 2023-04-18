@@ -1,11 +1,12 @@
 .container {
   display: flex;
   flex-direction: row;
-  margin-right: auto;
-  margin-left: auto;
-
+  justify-content: center;
   align-items: center;
-  align-content: center;
+  text-align: flex-start;
   padding: 0 20px;
   gap: 30px;
+}
+.p{
+  margin: 1rem 0;
 }

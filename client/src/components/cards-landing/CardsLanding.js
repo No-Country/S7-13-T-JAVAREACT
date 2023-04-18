@@ -10,8 +10,8 @@ const CardsLanding = () => {
           height={200}
           src="/img/img4.png"
         />
-        <p>Rapido</p>
-        <p>Descripcion</p>
+        <p className={styles.p}>Rapido</p>
+        <p className={styles.p}>Descripcion</p>
       </div>
       <div>
         <Image
@@ -20,8 +20,8 @@ const CardsLanding = () => {
           height={200}
           src="/img/img4.png"
         />
-        <p>Facil de usar</p>
-        <p>Descripcion</p>
+        <p className={styles.p}>Facil de usar</p>
+        <p className={styles.p}>Descripcion</p>
       </div>
       <div>
         <Image
@@ -30,8 +30,8 @@ const CardsLanding = () => {
           height={200}
           src="/img/img4.png"
         />
-        <p>Intuitivo</p>
-        <p>Descripcion</p>
+        <p className={styles.p}>Intuitivo</p>
+        <p className={styles.p}>Descripcion</p>
       </div>
       <div>
         <Image
@@ -40,8 +40,8 @@ const CardsLanding = () => {
           height={200}
           src="/img/img4.png"
         />
-        <p>Profesional</p>
-        <p>Descripcion</p>
+        <p className={styles.p}>Profesional</p>
+        <p className={styles.p}>Descripcion</p>
       </div>
     </section>
   );
