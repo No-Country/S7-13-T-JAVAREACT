@@ -207,34 +207,87 @@
   color: #181818;
 }
 
-.containerColours {
+.containerPortfolios {
   width: 100%;
+  margin: 2rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
-.divColours {
-  width: 25%;
-  height: 25px;
+.pickPortfolio {
   cursor: pointer;
-  opacity: 0.5;
-}
-.divColours:hover {
-  opacity: 1;
+  border-radius: 16px;
 }
 
-.divColours:nth-child(1) {
-  background-color: red;
+.pickPortfolio:hover {
+  opacity: 0.8;
 }
-.divColours:nth-child(2) {
-  background-color: yellow;
+
+/* Leaf Photo */
+
+.containerPhoto {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.divColours:nth-child(3) {
-  background-color: green;
+
+.containerUploadPhoto {
+  width: 40%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.divColours:nth-child(4) {
-  background-color: pink;
+
+.uploadPhoto {
+  width: 384px;
+  height: 442px;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid #9fa7f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.inputUpload {
+  width: 100%;
+  height: 100%;
+  background: url("../../public/img/Vectorperfil2.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.iconAdd {
+  position: absolute;
+  background-color: #5160fb;
+  bottom: 12%;
+  right: 12%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.containerImageTextPhoto {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media (max-width: 950px) {

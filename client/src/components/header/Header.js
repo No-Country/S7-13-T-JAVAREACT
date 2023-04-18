@@ -11,7 +11,7 @@ const Header = () => {
     if (status === "authenticated") {
       router.push("/onboarding");
     } else {
-      router.push("/login");
+      router.push("/comencemos");
     }
   };
   return (
@@ -25,13 +25,11 @@ const Header = () => {
           minutos.
         </h2>
         <div className={styles.div_boton}>
-          <Link href={"/OnBoarding"}>
-            <button onClick={handleComencemos}>Comencemos</button>
-          </Link>
+          <button onClick={handleComencemos}>Comencemos</button>
         </div>
       </div>
       <div>
-        <Image src="/img/robot.png" alt="robot" width={286} height={300} />
+        <Image src="/img/robotBase.png" alt="robot" width={286} height={300} />
       </div>
     </section>
   );

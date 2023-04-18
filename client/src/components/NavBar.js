@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const NavBar = () => {
   const { data: session, status } = useSession();
-  
 
   return (
     <nav className={styles.nav}>

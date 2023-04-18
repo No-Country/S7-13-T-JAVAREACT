@@ -4,7 +4,7 @@ const LeafThree = () => {
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
-        <Image src="/img/robot.png" alt="robot" width={384} height={430} />
+        <Image src="/img/robotHello.png" alt="robot" width={384} height={430} />
       </div>
       <div className={styles.text}>
         <h1 className={styles.h1Welcome}>¡Perfecto!</h1>
@@ -22,16 +22,32 @@ const LeafThree = () => {
             <button className={styles.buttonDesign}>Minimalista</button>
             <button className={styles.buttonDesign}>Creativo</button>
           </div>
-          <p className={styles.pQuestion}>¡Ahora veamos algo de color!</p>
-          <div className={styles.containerColours}>
-            <div className={styles.divColours}></div>
-            <div className={styles.divColours}></div>
-            <div className={styles.divColours}></div>
-            <div className={styles.divColours}></div>
+          <div className={styles.containerPortfolios}>
+            <button
+              onClick={() => {
+                console.log("Lanzani");
+              }}
+            >
+              <Image
+                className={styles.pickPortfolio}
+                src="/img/lanzani.png"
+                width={300}
+                height={300}
+              />
+            </button>
+            <button
+              onClick={() => {
+                console.log("Fram");
+              }}
+            >
+              <Image
+                className={styles.pickPortfolio}
+                src="/img/fram.png"
+                width={300}
+                height={300}
+              />
+            </button>
           </div>
-        </div>
-        <div className={styles.containerButtonEdit}>
-          <button className={styles.button}>Personalizar</button>
         </div>
       </div>
     </div>
