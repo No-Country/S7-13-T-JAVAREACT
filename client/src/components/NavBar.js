@@ -1,9 +1,11 @@
-import { signOut, useSession } from "next-auth/react";
+import { getSession, signOut, useSession } from "next-auth/react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 
 const NavBar = () => {
   const { data: session, status } = useSession();
+  
+
   return (
     <nav className={styles.nav}>
       <div className={styles.menu}>
