@@ -10,3 +10,17 @@
 .p{
   margin: 1rem 0;
 }
+
+@media (max-width:999px){
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: flex-start;
+    padding: 0 20px;
+    gap: 30px;
+  }
+}
+
