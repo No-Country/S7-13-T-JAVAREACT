@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
-import getUserData, { getUser, uploadPicture } from "@/pages/api/auth/user";
+import { getUser, uploadPicture } from "@/pages/api/auth/user";
 
 const LeafPhoto = () => {
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await getUserData();
+        const res = await getUser();
         if (res) {
           console.log(res.data.image);
           setImgUrl(res.data.image);
@@ -25,16 +25,17 @@ const LeafPhoto = () => {
     const file = e.target.files[0];
     const res = await uploadPicture(file);
     console.log(res);
-    const updatedUserData = await getUserData();
+    const updatedUserData = await getUser();
+    console.log(updatedUserData);
     if (updatedUserData) {
-      console.log(updatedUserData.data.image);
-      setImgUrl(updatedUserData.data.image);
+      console.log(updatedUserData.image);
+      setImgUrl(updatedUserData.image);
     }
   };
   /* { } */
   return (
     <div className={styles.containerPhoto}>
-      {imgUrl === "" ? (
+      {imgUrl === null ? (
         <div className={styles.containerUploadPhoto}>
           <p className={styles.pQuestion}>Agrega tu foto de perfil</p>
           <div className={styles.uploadPhoto}>

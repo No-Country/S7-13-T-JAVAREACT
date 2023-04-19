@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import getUserData, {
+  getUser,
   handleSkillsServer,
   updateUserName,
 } from "./api/auth/user";
@@ -11,8 +12,6 @@ import getUserData, {
 const perfil = () => {
   const { data: session, status } = useSession();
   const [skills, setSkills] = useState([]);
-  if (status === "authenticated") {
-  }
 
   const handleUpdateName = async () => {
     try {
@@ -85,6 +84,7 @@ const perfil = () => {
     <>
       <div className="flex gap-10 flex-col">
         Aca se va a mostrar el perfil de usuario
+        <button onClick={() => getUser()}>GET USER DATA!!!!!!</button>
         <button onClick={() => handleUpdateName()}>Get Profile</button>
         <button onClick={() => handleSkills(skills)}>Update Skills</button>
         <button onClick={() => getUserData()}>Get Data User From server</button>

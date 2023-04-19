@@ -1,9 +1,6 @@
 import styles from "./slider.module.css";
 import Image from "next/image";
 const Slider = () => {
-
-
-
   return (
     <div className={styles.containerSlider}>
       <h2 className={styles.title}>Sitios creados con PortaCode</h2>

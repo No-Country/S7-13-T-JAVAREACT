@@ -23,8 +23,8 @@ export const authOptions = {
       async authorize(credentials, req) {
         const { email, password } = credentials;
         const payload = {
-          email: email,
-          password: password,
+          email,
+          password,
         };
         const res = await fetch(
           "https://portacode.up.railway.app/api/v1/auth/authenticate",

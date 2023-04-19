@@ -1,14 +1,10 @@
-import Image from "next/image";
-import styles from "./seccion2.module.css"
+import styles from "./seccion2.module.css";
 const Seccion2 = () => {
   return (
     <div className={styles.containerSeccion}>
       <section className={styles.seccionIzqDer}>
         <div className={styles.seccionPhotoIzq}>
-          <img
-            src="/img/compuLanzani.png"
-            alt="LanzaniPortfolio"
-          />
+          <img src="/img/compuLanzani.png" alt="LanzaniPortfolio" />
         </div>
         <div className={styles.containerText}>
           <h2 className="text-3xl">
@@ -33,10 +29,7 @@ const Seccion2 = () => {
           </p>
         </div>
         <div className={styles.seccionPhotoDer}>
-          <img
-            src="/img/compuFram.png"
-            alt="Imagen de fram"
-          />
+          <img src="/img/compuFram.png" alt="Imagen de fram" />
         </div>
       </section>
     </div>
