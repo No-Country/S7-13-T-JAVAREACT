@@ -1,17 +1,16 @@
 import Image from "next/image";
+import styles from "./seccion2.module.css"
 const Seccion2 = () => {
   return (
-    <div className="bg-[#050829]">
-      <section className="mt-10 flex justify-center">
-        <div>
-          <Image
-            alt="Imagen de prueba"
-            width={600}
-            height={780}
-            src="/img/imgParaSeccion2.svg"
+    <div className={styles.containerSeccion}>
+      <section className={styles.seccionIzqDer}>
+        <div className={styles.seccionPhotoIzq}>
+          <img
+            src="/img/compuLanzani.png"
+            alt="LanzaniPortfolio"
           />
         </div>
-        <div className="flex flex-col justify-center gap-5">
+        <div className={styles.containerText}>
           <h2 className="text-3xl">
             Sitios atractivos y completos en pocos pasos
           </h2>
@@ -25,20 +24,18 @@ const Seccion2 = () => {
           </p>
         </div>
       </section>
-      <section className="mt-10 flex justify-center">
-        <div className="flex flex-col justify-center gap-5">
+      <section className={styles.seccionIzqDer}>
+        <div className={styles.containerText}>
           <h2 className="text-3xl">Diseños usables y responsivos</h2>
           <p>
             Nos encargamos que tu portfolio sea adaptativo, fácil de visualizar
             y que tenga una buena experiencia para tus siguientes visitantes.
           </p>
         </div>
-        <div>
-          <Image
-            alt="Imagen de prueba"
-            width={600}
-            height={780}
-            src="/img/imgParaSeccion2R.svg"
+        <div className={styles.seccionPhotoDer}>
+          <img
+            src="/img/compuFram.png"
+            alt="Imagen de fram"
           />
         </div>
       </section>

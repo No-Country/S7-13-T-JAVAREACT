@@ -18,7 +18,7 @@ const Header = () => {
     <section id="home" className={styles.container}>
       <div className={styles.container_right}>
         <h1 className={styles.title}>
-          Hola! Soy mascota y te ayudare a crear un portfolio increíble
+          Hola! Soy Robotín y te ayudare a crear tu portfolio increíble
         </h1>
         <h2>
           Con PortaCode podrás generar un sitio profesional en menos de 10
