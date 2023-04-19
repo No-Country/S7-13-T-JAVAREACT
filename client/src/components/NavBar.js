@@ -1,4 +1,4 @@
-import { getSession, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 

@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { handleStacksServer } from "@/pages/api/auth/user";
+
 const LeafOne = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
+  console.log(session);
   if (status === "unauthenticated") {
     router.push("/login");
   }
