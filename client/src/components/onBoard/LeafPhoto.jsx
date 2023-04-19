@@ -21,12 +21,6 @@ const LeafPhoto = () => {
     fetchUserData();
   }, []);
 
-  /* const handleImgUpload = async (e) => {
-    const file = e.target.files[0];
-    const res = await uploadPicture(file);
-    console.log(res);
-  };
- */
   const handleImgUpload = async (e) => {
     const file = e.target.files[0];
     const res = await uploadPicture(file);
