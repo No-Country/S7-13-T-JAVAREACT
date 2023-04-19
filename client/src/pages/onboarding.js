@@ -52,7 +52,7 @@ const onBoarding = () => {
             </>
           ) : (
             <>
-              <Link className={styles.buttonTerminar} href={"/"}>
+              <Link className={styles.buttonTerminar} href={"/editar"}>
                 <button
                   onClick={() => {
                     setPage(page + 1);
