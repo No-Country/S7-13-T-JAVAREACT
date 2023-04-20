@@ -1,8 +1,8 @@
 import { useState } from "react";
-/*import axios from "axios";*/
 import { useSession } from "next-auth/react";
 
 function ProfileForm() {
+  /*import axios from "axios";*/
   const { data: session, status } = useSession();
   if (status === "authenticated") {
     console.log(session.user.token);
@@ -17,13 +17,12 @@ function ProfileForm() {
   setName('jose')
   setAddress('Adress')
   setEmail('yo@yo.com')
-  /*const [profileImage, setProfileImage] = useState(null);*/
-  console.log(profileImage)
-/*
+
+  /*const [profileImage, setProfileImage] = useState(null);
   const handleNameChange = (e) => setName(e.target.value);
   const handleAddressChange = (e) => setAddress(e.target.value);
-  const handleEmailChange = (e) => setEmail(e.target.value);
-*/
+  const handleEmailChange = (e) => setEmail(e.target.value);*/
+
   const handleSubmit = async (e) => {
     /*const handleProfileImageChange = async (e) => {
       setProfileImage(e.target.files[0]);
@@ -38,7 +37,7 @@ function ProfileForm() {
       console.log(responsePostImg);
     };*/
   };
-  /*   const handleSubmit = async (e) => {
+  /*const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -53,7 +52,7 @@ function ProfileForm() {
     } catch (err) {
       alert("Ocurrió un error al cargar el perfil");
     }
-  }; */
+  };*/
 
   return (
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
@@ -66,7 +65,7 @@ function ProfileForm() {
           id="name"
           type="text"
           value={name}
-          /*    onChange={handleNameChange} */
+          /*  onChange={handleNameChange} */
         />
       </div>
       <div className="mb-4">
