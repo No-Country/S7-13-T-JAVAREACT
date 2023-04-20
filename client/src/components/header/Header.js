@@ -1,11 +1,11 @@
 import styles from "./header.module.css";
-import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 const Header = () => {
   const { data: session, status } = useSession();
+  console.log(session);
   const router = useRouter();
   const handleComencemos = () => {
     if (status === "authenticated") {

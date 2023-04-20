@@ -1,16 +1,14 @@
 "use client";
-
 import axios from "axios";
-import { getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import getUserData, {
   handleSkillsServer,
   updateUserName,
 } from "./api/auth/user";
 
 const perfil = () => {
-  const [dataUser, setDataUser] = useState({});
   const { data: session, status } = useSession();
   const [skills, setSkills] = useState([]);
   if (status === "authenticated") {

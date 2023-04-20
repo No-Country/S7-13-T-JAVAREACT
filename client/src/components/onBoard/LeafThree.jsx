@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
 const LeafThree = () => {
+  const [portfolio, setPortfolio] = useState("");
+  const [seleccion, setSeleccion] = useState("");
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
@@ -17,7 +20,12 @@ const LeafThree = () => {
             automáticamente.
           </p>
           <div className={styles.containerDesign}>
-            <button className={styles.buttonDesign}>Moderno</button>
+            <button
+              onClick={() => setSeleccion("Moderno")}
+              className={styles.buttonDesign}
+            >
+              Moderno
+            </button>
             <button className={styles.buttonDesign}>Elegante</button>
             <button className={styles.buttonDesign}>Minimalista</button>
             <button className={styles.buttonDesign}>Creativo</button>
@@ -25,7 +33,7 @@ const LeafThree = () => {
           <div className={styles.containerPortfolios}>
             <button
               onClick={() => {
-                console.log("Lanzani");
+                setPortfolio("Lanzani");
               }}
             >
               <Image
