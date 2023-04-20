@@ -1,18 +1,25 @@
 package com.portacodes.responses;
 
-import com.portacodes.auth.AuthenticationResponse;
+
 
 public class SuccessResponse {
     private String message;
 
+    private Object data;
 
-    public SuccessResponse(String message, AuthenticationResponse response) {
+
+    public SuccessResponse(String message, Object data) {
         this.message = message;
+        this.data = data;
 
     }
 
     public String getMessage() {
         return message;
+    }
+
+    public Object getData() {
+        return data;
     }
 
 
