@@ -28,12 +28,17 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String nombres;
+    private String name;
 
     private String email;
 
     @Column(length = 60)
     private String password;
+
+    private String Stack;
+
+
+    private String image;
 
 
     @Enumerated(EnumType.STRING)
@@ -42,6 +47,9 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     @JsonBackReference
     private List<Token> tokens;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Skill> skills;
 
 
     @Override
