@@ -7,7 +7,7 @@ import CardsLanding from "@/components/cards-landing/CardsLanding";
 import PreciosLanding from "@/components/precios-landing/PreciosLanding";
 import Footer from "@/components/footer/Footer";
 
-import Seccion2 from "@/components/seccion2/Seccion2";
+import Seccion2 from "@/components/Seccion2/seccion2";
 
 export default function Home() {
   const { data: session, status } = useSession();
