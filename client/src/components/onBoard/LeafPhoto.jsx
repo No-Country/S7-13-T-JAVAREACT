@@ -54,7 +54,7 @@ const LeafPhoto = () => {
           </div>
         </div>
       ) : (
-        imgUrl && <img src={imgUrl} alt="profile" width={200} height={200} />
+        imgUrl && <Image src={imgUrl} alt="profile" width={200} height={200} />
       )}
 
       <div className={styles.containerImageTextPhoto}>
@@ -64,7 +64,7 @@ const LeafPhoto = () => {
 
         {imgUrl && (
           <Image
-            src="/img/robotHello.png"
+            src={"/img/robotHello.png"}
             alt="robot"
             width={384}
             height={430}
