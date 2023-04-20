@@ -1,6 +1,5 @@
 "use client";
-/* import { useUserContext } from "@/context/UserContext"; */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Login.module.css";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -8,9 +7,8 @@ import { useRouter } from "next/router";
 
 const page = () => {
   const router = useRouter();
-  /*   const [data, setData] = useState({});
-   */
   const { data: session, status } = useSession();
+  console.log(session);
   if (status === "authenticated") {
     router.push("/onboarding");
   }
@@ -18,6 +16,7 @@ const page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+  console.log(user);
   console.log(setEmail);
   console.log(setPassword);
   /*   const handleChange = (e) => {
@@ -75,10 +74,6 @@ const page = () => {
           Iniciar Sesión
         </button>
         <p className={styles.otherOptions}>Otras Opciones</p>
-        {/*  <div className={styles.buttonContainer}>
-          <button className={styles.button}>❤ Google</button>
-          <button className={styles.button}>❤ Github</button>
-        </div> */}
         <p className={styles.p}>
           ¿No tienes cuenta?{" "}
           <Link className={styles.linkRegister} href={"/register"}>
@@ -94,35 +89,3 @@ const page = () => {
 };
 
 export default page;
-
-/*   useEffect(() => {
-    fetch("https://portacode2-production.up.railway.app/api/v1/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, [data]); */
-/* const authenticate = async () => {
-    const response = await fetch(
-      "https://portacode2-production.up.railway.app/api/v1/auth/authenticate",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-        body: JSON.stringify({ email, password }),
-      }
-    );
-    
-    const result = await response.json();
-    if (result.token) {
-      localStorage.setItem("token", result.token);
-    }
-
-    return data;
-  }; */

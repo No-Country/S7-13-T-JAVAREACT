@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
-import { getSession, useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 import NavBar from "@/components/NavBar";
 import Header from "@/components/header/Header";
 import Slider from "@/components/Slider";
@@ -8,10 +7,8 @@ import CardsLanding from "@/components/cards-landing/CardsLanding";
 import Seccion2 from "@/components/seccion2/Seccion2";
 import PreciosLanding from "@/components/precios-landing/PreciosLanding";
 import Footer from "@/components/footer/Footer";
-import { useEffect } from "react";
 
 export default function Home() {
-  const router = useRouter();
   const { data: session, status } = useSession();
   console.log(session, status);
 
@@ -20,18 +17,6 @@ export default function Home() {
 
   return (
     <>
-      {/*  <div>
-       
-        {session ? (
-          <div>
-            <h1>{session.user.name}</h1>
-            <h1>{session.user.email}</h1>
-            <img src={session.user.image} alt="" />
-          </div>
-        ) : (
-          <p>skeleton</p>
-        )}
-      </div> */}
       <main className={styles.main}>
         <NavBar />
         <Header />
@@ -47,7 +32,6 @@ export default function Home() {
         <Seccion2 />
         <PreciosLanding />
         <Footer />
-        {/*  <div className={styles.div_height}></div> */}
       </main>
     </>
   );

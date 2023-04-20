@@ -1,17 +1,14 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-
 import styles from "./Register.module.css";
-import { useRouter } from "next/router";
 
 const register = () => {
-  const router = useRouter();
   const [token, setToken] = useState("");
   const [mensage, setMensage] = useState("");
   const [backResponse, setBackResponse] = useState("");
+  console.log(backResponse);
   const [userData, setUserData] = useState({
     name: "",
     email: "",
@@ -33,12 +30,6 @@ const register = () => {
       setMensage("Las contraseñas no coinciden");
       return;
     }
-    /*   let userDataTest = {
-      firstname: "nombre test",
-      email: "aaasdg@asdfg.com",
-      password: "test",
-      confirmPassword: "test",
-    }; */
     try {
       console.log(userData);
       const response = await axios.post(
@@ -47,7 +38,6 @@ const register = () => {
       );
       const token = response.data.token;
       console.log(token);
-      /* Este mensaje tenemos que mostrarlo en pantalla para indicar si el usuario se creo bien */
       const respuestaBack = JSON.stringify(response.data.message);
       setBackResponse(respuestaBack);
       setToken(token);
@@ -119,8 +109,7 @@ const register = () => {
         </div>
         <button className={styles.button}>Registrarse</button>
       </form>
-      {/* Hay que estilizar este div  */}
-      <div>{backResponse ? backResponse : ""}</div>
+      {/*   <div>{backResponse ? backResponse : ""}</div> */}
       <div>
         <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
@@ -139,5 +128,3 @@ const register = () => {
 };
 
 export default register;
-
-/* /*  */

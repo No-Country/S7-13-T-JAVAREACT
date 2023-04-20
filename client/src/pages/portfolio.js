@@ -1,31 +1,34 @@
-import { getSession, useSession } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import getUserData, { getUser } from "./api/auth/user";
-import { data } from "autoprefixer";
+import { getUser } from "./api/auth/user";
+import Link from "next/link";
 import Image from "next/image";
 
 const editar = () => {
   const router = useRouter();
-  const [dataUser, setDataUser] = useState({});
+  /*  const [dataUser, setDataUser] = useState({}); */
   const { data: session, status } = useSession();
+  console.log(session);
   if (status === "unauthenticated") {
     router.push("/login");
   }
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
   const [name, setName] = useState("");
   const [skills, setSkills] = useState({});
+  console.log(imgUrl, skills);
   const [stack, setStack] = useState("");
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await getUserData();
+        const res = await getUser();
         if (res) {
-          console.log(res.data);
-          setImgUrl(res.data.image);
-          setName(res.data.name);
-          setSkills(res.data.skills);
-          setStack(res.data.stack);
+          setImgUrl(res.image);
+          console.log(imgUrl);
+          setName(res.name);
+          console.log(res.name);
+          setSkills(res.skillsNames);
+          setStack(res.stack);
         }
       } catch (error) {
         console.error(error);
@@ -34,6 +37,7 @@ const editar = () => {
 
     fetchUserData();
   }, []);
+
   return (
     <div className="bg-white h-screen">
       <nav className="bg-[#050829] flex justify-between items-center p-4 h-28">
@@ -41,7 +45,9 @@ const editar = () => {
           <h2 className="text-3xl font-bold">PortaCode</h2>
         </div>
         <ul className="flex gap-4 font-bold">
-          <li>Home</li>
+          <Link href={"/"}>
+            <li>Home</li>
+          </Link>
           <li>Comunidad</li>
           <li>Nombre</li>
         </ul>
@@ -74,7 +80,7 @@ const editar = () => {
             </nav>{" "}
             <div className="flex flex-col  mt-16 ml-10">
               <h1 className="text-white text-7xl font-bold">
-                HI! I'M {name !== "" ? name : "Peter Lanzani"}
+                HI! IM {name !== "" ? name : "Peter Lanzani"}
               </h1>
               <h2 className="text-7xl font-bold text-[#FC595A] mt-4 ">
                 {stack !== "" ? stack : "Frontend Developer"}
@@ -84,9 +90,18 @@ const editar = () => {
               </p>
             </div>
           </div>
-          <div className="h-[330px] bg-[#3B3A4C]">
-            {/* <Image src={imgUrl} width={400} height={400} /> */}
-            {/*  <img src={imgUrl} alt="profile" width={200} height={200} /> */}
+          <div className="h-[330px] relative bg-[#3B3A4C]">
+            <div className="absolute -top-16 right-28">
+              {imgUrl !== null && (
+                <Image
+                  className="rounded-full"
+                  alt="Imagen de perfil de usuario"
+                  width={300}
+                  height={200}
+                  src={imgUrl}
+                />
+              )}
+            </div>
           </div>
         </div>
       </div>{" "}

@@ -17,7 +17,7 @@ const PreciosLanding = () => {
             Con nuestro plan premium podrás acceder a todas las funciones de
             PortaCode
           </p>
-          {/* Cambie la etiqueta P por que no puede contener una lista UL , Cris*/}
+
           <span className={styles.p}>
             <ul className={styles.ul}>
               <li className={styles.li}>
