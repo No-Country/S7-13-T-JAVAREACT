@@ -2,6 +2,8 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getUser } from "./api/auth/user";
+import Link from "next/link";
+import Image from "next/image";
 
 const editar = () => {
   const router = useRouter();
@@ -11,7 +13,7 @@ const editar = () => {
   if (status === "unauthenticated") {
     router.push("/login");
   }
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState(null);
   const [name, setName] = useState("");
   const [skills, setSkills] = useState({});
   console.log(imgUrl, skills);
@@ -21,8 +23,8 @@ const editar = () => {
       try {
         const res = await getUser();
         if (res) {
-          console.log(res.data);
           setImgUrl(res.image);
+          console.log(imgUrl);
           setName(res.name);
           console.log(res.name);
           setSkills(res.skillsNames);
@@ -35,6 +37,7 @@ const editar = () => {
 
     fetchUserData();
   }, []);
+
   return (
     <div className="bg-white h-screen">
       <nav className="bg-[#050829] flex justify-between items-center p-4 h-28">
@@ -42,7 +45,9 @@ const editar = () => {
           <h2 className="text-3xl font-bold">PortaCode</h2>
         </div>
         <ul className="flex gap-4 font-bold">
-          <li>Home</li>
+          <Link href={"/"}>
+            <li>Home</li>
+          </Link>
           <li>Comunidad</li>
           <li>Nombre</li>
         </ul>
@@ -85,7 +90,19 @@ const editar = () => {
               </p>
             </div>
           </div>
-          <div className="h-[330px] bg-[#3B3A4C]"></div>
+          <div className="h-[330px] relative bg-[#3B3A4C]">
+            <div className="absolute -top-16 right-28">
+              {imgUrl !== null && (
+                <Image
+                  className="rounded-full"
+                  alt="Imagen de perfil de usuario"
+                  width={300}
+                  height={200}
+                  src={imgUrl}
+                />
+              )}
+            </div>
+          </div>
         </div>
       </div>{" "}
     </div>
