@@ -4,7 +4,7 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/header/Header";
 import Slider from "@/components/Slider";
 import CardsLanding from "@/components/cards-landing/CardsLanding";
-import Seccion2 from "@/components/seccion2/Seccion2";
+/* import Seccion2 from "@/components/seccion2/Seccion2"; */
 import PreciosLanding from "@/components/precios-landing/PreciosLanding";
 import Footer from "@/components/footer/Footer";
 
@@ -29,7 +29,7 @@ export default function Home() {
         <div className={styles.div}>
           <CardsLanding />
         </div>
-        <Seccion2 />
+        {/*      <Seccion2 /> */}
         <PreciosLanding />
         <Footer />
       </main>
