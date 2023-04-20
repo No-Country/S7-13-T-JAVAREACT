@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useSession } from "next-auth/react";
 
@@ -15,6 +15,7 @@ function ProfileForm() {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [profileImage, setProfileImage] = useState(null);
+  console.log(profileImage)
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleAddressChange = (e) => setAddress(e.target.value);

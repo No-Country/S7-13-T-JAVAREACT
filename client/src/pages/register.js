@@ -8,7 +8,6 @@ import styles from "./Register.module.css";
 import { useRouter } from "next/router";
 
 const register = () => {
-  const router = useRouter();
   const [token, setToken] = useState("");
   const [mensage, setMensage] = useState("");
   const [backResponse, setBackResponse] = useState("");
@@ -120,7 +119,7 @@ const register = () => {
         <button className={styles.button}>Registrarse</button>
       </form>
       {/* Hay que estilizar este div  */}
-      <div>{backResponse ? backResponse : ""}</div>
+      <div>{backResponse && backResponse}</div>
       <div>
         <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>

@@ -5,9 +5,11 @@ const Seccion2 = () => {
     <div className={styles.containerSeccion}>
       <section className={styles.seccionIzqDer}>
         <div className={styles.seccionPhotoIzq}>
-          <img
+          <Image
             src="/img/compuLanzani.png"
             alt="LanzaniPortfolio"
+            width={200}
+            height={200}
           />
         </div>
         <div className={styles.containerText}>

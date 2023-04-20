@@ -1,9 +1,10 @@
-import { getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import getUserData, { getUser } from "./api/auth/user";
-import { data } from "autoprefixer";
-import Image from "next/image";
+import getUserData from "./api/auth/user";
+
+/*import { data } from "autoprefixer";
+import Image from "next/image";*/
 
 const editar = () => {
   const router = useRouter();

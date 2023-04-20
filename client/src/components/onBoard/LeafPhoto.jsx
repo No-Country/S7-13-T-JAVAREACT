@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
-import getUserData, { getUser, uploadPicture } from "@/pages/api/auth/user";
+import getUserData, { uploadPicture } from "@/pages/api/auth/user";
+import Image from "next/image";
 
 const LeafPhoto = () => {
   const [imgUrl, setImgUrl] = useState("");
@@ -53,7 +54,7 @@ const LeafPhoto = () => {
           </div>
         </div>
       ) : (
-        imgUrl && <img src={imgUrl} alt="profile" width={200} height={200} />
+        imgUrl && <Image src={imgUrl} alt="profile" width={200} height={200} />
       )}
 
       <div className={styles.containerImageTextPhoto}>

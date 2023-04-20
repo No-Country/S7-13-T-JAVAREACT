@@ -1,9 +1,6 @@
-import { useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
 const LeafThree = () => {
-  const [portfolio, setPortfolio] = useState("");
-  const [seleccion, setSeleccion] = useState("");
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>

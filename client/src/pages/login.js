@@ -1,6 +1,6 @@
 "use client";
 /* import { useUserContext } from "@/context/UserContext"; */
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Login.module.css";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -10,7 +10,7 @@ const page = () => {
   const router = useRouter();
   /*   const [data, setData] = useState({});
    */
-  const { data: session, status } = useSession();
+  const { data: status } = useSession();
   if (status === "authenticated") {
     router.push("/onboarding");
   }
@@ -18,6 +18,7 @@ const page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+  console.log(user)
   console.log(setEmail);
   console.log(setPassword);
   /*   const handleChange = (e) => {

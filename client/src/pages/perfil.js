@@ -12,6 +12,7 @@ const perfil = () => {
   const { data: session, status } = useSession();
   const [skills, setSkills] = useState([]);
   if (status === "authenticated") {
+    console.log(status)
   }
 
   const handleUpdateName = async () => {
