@@ -25,19 +25,19 @@ function ProfileForm() {
   const handleEmailChange = (e) => setEmail(e.target.value);
 */
   const handleSubmit = async (e) => {
+    /*
     const handleProfileImageChange = async (e) => {
       setProfileImage(e.target.files[0]);
       const config = {
         headers: { Authorization: `Bearer ${session.user.token}` },
       };
-      console.log(handleProfileImageChange)
       const responsePostImg = await axios.post(
         `https://portacode.up.railway.app/api/user/upload/`,
         setProfileImage,
         config
       );
       console.log(responsePostImg);
-    };
+    };*/
   };
   /*   const handleSubmit = async (e) => {
     e.preventDefault();
