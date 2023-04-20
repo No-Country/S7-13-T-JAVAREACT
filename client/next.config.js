@@ -6,3 +6,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+/* Agregada la configuracion de Cloudinary */
