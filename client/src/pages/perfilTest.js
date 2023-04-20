@@ -16,11 +16,11 @@ function ProfileForm() {
   const [email, setEmail] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   console.log(profileImage)
-
+/*
   const handleNameChange = (e) => setName(e.target.value);
   const handleAddressChange = (e) => setAddress(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
-
+*/
   const handleSubmit = async (e) => {
     const handleProfileImageChange = async (e) => {
       setProfileImage(e.target.files[0]);

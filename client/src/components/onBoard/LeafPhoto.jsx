@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from "../../pages/OnBoarding.module.css";
 import Image from "next/image";
 import getUserData, { uploadPicture } from "@/pages/api/auth/user";
-import Image from "next/image";
 
 const LeafPhoto = () => {
   const [imgUrl, setImgUrl] = useState("");

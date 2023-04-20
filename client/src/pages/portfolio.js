@@ -1,12 +1,14 @@
 import { useSession } from "next-auth/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import getUserData from "./api/auth/user";
 
-/*import { data } from "autoprefixer";
-import Image from "next/image";*/
-
 const editar = () => {
+/*
+import { data } from "autoprefixer"
+import Image from "next/image"
+*/
+
   const router = useRouter();
   const [dataUser, setDataUser] = useState({});
   const { data: session, status } = useSession();
@@ -17,6 +19,7 @@ const editar = () => {
   const [name, setName] = useState("");
   const [skills, setSkills] = useState({});
   const [stack, setStack] = useState("");
+  console.log(dataUser, session, skills, imgUrl)
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -75,7 +78,7 @@ const editar = () => {
             </nav>{" "}
             <div className="flex flex-col  mt-16 ml-10">
               <h1 className="text-white text-7xl font-bold">
-                HI! I'M {name !== "" ? name : "Peter Lanzani"}
+                HI! IM {name !== "" ? name : "Peter Lanzani"}
               </h1>
               <h2 className="text-7xl font-bold text-[#FC595A] mt-4 ">
                 {stack !== "" ? stack : "Frontend Developer"}

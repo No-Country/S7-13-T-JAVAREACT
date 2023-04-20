@@ -5,7 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 
 import styles from "./Register.module.css";
-import { useRouter } from "next/router";
+
 
 const register = () => {
   const [token, setToken] = useState("");
