@@ -126,6 +126,7 @@ export const handleSkillsServer = async (skills) => {
         config
       );
       console.log(responsePost);
+      return true;
     }
     console.log("Skills actualizado correctamente");
   } catch (error) {
@@ -156,9 +157,8 @@ export const handleStacksServer = async (tecnologia) => {
         config
       );
       console.log(responsePost);
+      return true;
     }
-    console.log("Skills actualizado correctamente");
-    return true;
   } catch (error) {
     console.log(error);
     console.log("Error al actualizar skills");

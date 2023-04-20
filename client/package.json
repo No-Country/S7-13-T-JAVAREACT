@@ -9,6 +9,7 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "prepare": "cd .. && husky install client/.husky"
+    
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",

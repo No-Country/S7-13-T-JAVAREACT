@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import styles from "./Register.module.css";
+import { signIn } from "next-auth/react";
 
 const register = () => {
   const [token, setToken] = useState("");
@@ -109,12 +110,25 @@ const register = () => {
         </div>
         <button className={styles.button}>Registrarse</button>
       </form>
-      {/*   <div>{backResponse ? backResponse : ""}</div> */}
+      <div>
+        {backResponse ? (
+          <div>
+            {backResponse}
+            <Link href={"/login"}>
+              <button className={styles.button}>Ir al login</button>
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
       <div>
         <p className={styles.otherOptions}>Otras Opciones</p>
         <div className={styles.buttonContainer}>
           <button className={styles.button}>❤ Google</button>
-          <button className={styles.button}>❤ Github</button>
+          <button onClick={() => signIn("github")} className={styles.button}>
+            ❤ Github
+          </button>
         </div>
         <p className={styles.p}>
           ¿Ya tienes una cuenta?{" "}

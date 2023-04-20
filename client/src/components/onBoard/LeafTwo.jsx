@@ -4,7 +4,20 @@ import Image from "next/image";
 import { handleSkillsServer } from "@/pages/api/auth/user";
 const LeafTwo = () => {
   const [skills, setSkills] = useState([]);
+  const [mesage, setMesage] = useState();
   console.log(typeof skills);
+  1;
+
+  const handleSkills = async () => {
+    const response = await handleSkillsServer(skills);
+    if (response) {
+      setSkills("");
+      console.log("Guardado exitosamente");
+      setMesage("Guardado exitosamente");
+    } else {
+      console.log("Error al guardar");
+    }
+  };
   return (
     <div className={styles.containerImageText}>
       <div className={styles.image}>
@@ -33,12 +46,15 @@ const LeafTwo = () => {
             onChange={(e) => setSkills([e.target.value])}
           />
           <button
-            onClick={() => handleSkillsServer(skills)}
+            onClick={() => handleSkills()}
             className={styles.button}
             type="submit"
           >
             Guardar
           </button>
+        </div>
+        <div>
+          <p className="text-white font-bold text-lg">{mesage && mesage}</p>
         </div>
       </div>
     </div>

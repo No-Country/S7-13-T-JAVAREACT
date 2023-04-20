@@ -15,7 +15,7 @@ const editar = () => {
   }
   const [imgUrl, setImgUrl] = useState(null);
   const [name, setName] = useState("");
-  const [skills, setSkills] = useState({});
+  const [skills, setSkills] = useState();
   console.log(imgUrl, skills);
   const [stack, setStack] = useState("");
   useEffect(() => {
@@ -23,11 +23,13 @@ const editar = () => {
       try {
         const res = await getUser();
         if (res) {
+          console.log(res);
           setImgUrl(res.image);
           console.log(imgUrl);
           setName(res.name);
           console.log(res.name);
-          setSkills(res.skillsNames);
+          setSkills(res.skillNames);
+          console.log(res.skillNames);
           setStack(res.stack);
         }
       } catch (error) {
@@ -39,12 +41,12 @@ const editar = () => {
   }, []);
 
   return (
-    <div className="bg-white h-screen">
-      <nav className="bg-[#050829] flex justify-between items-center p-4 h-28">
+    <div className="bg-white max-h-max overflow-hidden">
+      <nav className="bg-[#050829] flex justify-between items-center p-4 h-28 ">
         <div>
           <h2 className="text-3xl font-bold">PortaCode</h2>
         </div>
-        <ul className="flex gap-4 font-bold">
+        <ul className="flex gap-20 font-bold mr-20">
           <Link href={"/"}>
             <li>Home</li>
           </Link>
@@ -52,8 +54,8 @@ const editar = () => {
           <li>Nombre</li>
         </ul>
       </nav>
-      <div className="flex">
-        <div className="h-[760px] w-52 bg-[#050829] mt-4 ml-4 rounded-2xl">
+      <div className="flex overflow-hidden">
+        <div className="h-[570px] w-52 bg-[#050829] mt-4 ml-4 rounded-2xl">
           {" "}
           <div className="flex flex-col gap-10 justify-center items-center">
             <ul className="flex flex-col gap-10 mt-10 font-bold">
@@ -68,7 +70,7 @@ const editar = () => {
           </div>
         </div>
         <div className="w-[1143px] h-[760px] ml-4 mt-4">
-          <div className="bg-[#2C2F36] h-[430px]">
+          <div className="bg-[#2C2F36] h-[380px]">
             <nav className="items-center p-10">
               <ul className="flex justify-around gap-2 font-bold">
                 <li>PROYECTS</li>
@@ -78,7 +80,7 @@ const editar = () => {
                 <li>CONTACT</li>
               </ul>
             </nav>{" "}
-            <div className="flex flex-col  mt-16 ml-10">
+            <div className="flex flex-col  mt-4 ml-10">
               <h1 className="text-white text-7xl font-bold">
                 HI! IM {name !== "" ? name : "Peter Lanzani"}
               </h1>
@@ -90,14 +92,25 @@ const editar = () => {
               </p>
             </div>
           </div>
-          <div className="h-[330px] relative bg-[#3B3A4C]">
+          <div className="h-[190px] relative bg-[#3B3A4C]">
+            <div>
+              <p className="text-white text-2xl font-bold">Skills:</p>
+              <ul className="list-disc ml-20 text-xl font-bold">
+                {skills &&
+                  skills.map((skill) => (
+                    <li key={skill} className="mt-1">
+                      {skill}
+                    </li>
+                  ))}
+              </ul>
+            </div>
             <div className="absolute -top-16 right-28">
               {imgUrl !== null && (
                 <Image
                   className="rounded-full"
                   alt="Imagen de perfil de usuario"
-                  width={300}
-                  height={200}
+                  width={150}
+                  height={100}
                   src={imgUrl}
                 />
               )}

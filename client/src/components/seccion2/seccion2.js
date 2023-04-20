@@ -6,8 +6,8 @@ const Seccion2 = () => {
       <section className={styles.seccionIzqDer}>
         <div className={styles.seccionPhotoIzq}>
           <Image
-            width={300}
-            height={300}
+            width={500}
+            height={500}
             src="/img/compuLanzani.png"
             alt="LanzaniPortfolio"
           />
@@ -36,8 +36,8 @@ const Seccion2 = () => {
         </div>
         <div className={styles.seccionPhotoDer}>
           <Image
-            width={300}
-            height={300}
+            width={600}
+            height={500}
             src="/img/compuFram.png"
             alt="Imagen de fram"
           />

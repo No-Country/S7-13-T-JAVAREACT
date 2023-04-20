@@ -13,7 +13,12 @@ const Comencemos = () => {
           <button className={styles.buttonBack}>x</button>
         </Link>
         <div className={styles.image}>
-          <Image src="/img/robot.png" alt="robot" width={384} height={430} />
+          <Image
+            src="/img/robotHello.png"
+            alt="robot"
+            width={384}
+            height={430}
+          />
         </div>
         <div className={styles.text}>
           <h1 className={styles.h1question}>¿Has estado aqui antes?</h1>
