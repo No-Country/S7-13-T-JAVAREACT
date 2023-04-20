@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+/*import axios from "axios";*/
 import { useSession } from "next-auth/react";
 
 function ProfileForm() {
@@ -17,7 +17,7 @@ function ProfileForm() {
   setName('jose')
   setAddress('Adress')
   setEmail('yo@yo.com')
-  const [profileImage, setProfileImage] = useState(null);
+  /*const [profileImage, setProfileImage] = useState(null);*/
   console.log(profileImage)
 /*
   const handleNameChange = (e) => setName(e.target.value);
@@ -25,8 +25,7 @@ function ProfileForm() {
   const handleEmailChange = (e) => setEmail(e.target.value);
 */
   const handleSubmit = async (e) => {
-    /*
-    const handleProfileImageChange = async (e) => {
+    /*const handleProfileImageChange = async (e) => {
       setProfileImage(e.target.files[0]);
       const config = {
         headers: { Authorization: `Bearer ${session.user.token}` },
