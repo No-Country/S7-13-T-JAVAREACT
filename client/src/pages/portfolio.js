@@ -10,7 +10,6 @@ import Image from "next/image"
 */
 
   const router = useRouter();
-  const [dataUser, setDataUser] = useState({});
   const { data: session, status } = useSession();
   if (status === "unauthenticated") {
     router.push("/login");
@@ -19,7 +18,7 @@ import Image from "next/image"
   const [name, setName] = useState("");
   const [skills, setSkills] = useState({});
   const [stack, setStack] = useState("");
-  console.log(dataUser, session, skills, imgUrl)
+  console.log(session, skills, imgUrl)
   useEffect(() => {
     const fetchUserData = async () => {
       try {

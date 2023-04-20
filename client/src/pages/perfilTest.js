@@ -14,6 +14,9 @@ function ProfileForm() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
+  setName('jose')
+  setAddress('Adress')
+  setEmail('yo@yo.com')
   const [profileImage, setProfileImage] = useState(null);
   console.log(profileImage)
 /*
@@ -27,7 +30,7 @@ function ProfileForm() {
       const config = {
         headers: { Authorization: `Bearer ${session.user.token}` },
       };
-
+      console.log(handleProfileImageChange)
       const responsePostImg = await axios.post(
         `https://portacode.up.railway.app/api/user/upload/`,
         setProfileImage,
