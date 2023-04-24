@@ -4,8 +4,8 @@ import NavBar from "@/components/NavBar";
 import Header from "@/components/header/Header";
 import Slider from "@/components/Slider";
 import CardsLanding from "@/components/cards-landing/CardsLanding";
-/* import Seccion2 from "@/components/seccion2/Seccion2"; */
-import PreciosLanding from "@/components/precios-landing/PreciosLanding";
+import Seccion2 from "@/components/seccion2/Seccion2";
+/* import PreciosLanding from "@/components/precios-landing/PreciosLanding"; */
 import Footer from "@/components/footer/Footer";
 
 export default function Home() {
@@ -13,7 +13,9 @@ export default function Home() {
   console.log(session, status);
 
   if (status === "loading")
-    return <h1>Loading... ACA TENEMOS QUE PONER UN LOADING....</h1>;
+    return (
+      <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
+    );
 
   return (
     <>
@@ -29,8 +31,8 @@ export default function Home() {
         <div className={styles.div}>
           <CardsLanding />
         </div>
-        {/*      <Seccion2 /> */}
-        <PreciosLanding />
+        <Seccion2 />
+        {/* <PreciosLanding /> */}
         <Footer />
       </main>
     </>

@@ -4,13 +4,9 @@ import Link from "next/link";
 
 const NavBar = () => {
   const { data: session, status } = useSession();
-
   return (
     <nav className={styles.nav}>
       <div className={styles.menu}>
-        <div>
-          <span className={styles.logo}>Logo</span>
-        </div>
         <div>
           <ul>
             <Link href={"/sobre"}>
@@ -30,11 +26,13 @@ const NavBar = () => {
       <div>
         {status === "authenticated" ? (
           <div className={styles.botones}>
-            <p>Hola! {session.user.name}</p>
-            <Link href={"/perfil"}>
-              <button>Ir a mi perfil</button>
+            <p>
+              Hola!<strong> {session.user.name}</strong>
+            </p>
+            <Link href={"/portfolio"}>
+              <button> Ir al Portafolio</button>
             </Link>
-            <button onClick={() => signOut()}>Cerrar Sesión</button>
+            <button onClick={() => signOut()}>Logout</button>
           </div>
         ) : (
           <div className={styles.botones}>

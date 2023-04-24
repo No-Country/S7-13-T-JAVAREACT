@@ -5,6 +5,7 @@ import { getUser, uploadPicture } from "@/pages/api/auth/user";
 
 const LeafPhoto = () => {
   const [imgUrl, setImgUrl] = useState(null);
+  const [uploading, setUploading] = useState(false);
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -20,8 +21,8 @@ const LeafPhoto = () => {
 
     fetchUserData();
   }, []);
-
   const handleImgUpload = async (e) => {
+    setUploading(true);
     const file = e.target.files[0];
     const res = await uploadPicture(file);
     console.log(res);
@@ -31,6 +32,7 @@ const LeafPhoto = () => {
       console.log(updatedUserData.image);
       setImgUrl(updatedUserData.image);
     }
+    setUploading(false);
   };
   /* { } */
   return (
@@ -54,9 +56,14 @@ const LeafPhoto = () => {
           </div>
         </div>
       ) : (
-        imgUrl && <Image src={imgUrl} alt="profile" width={200} height={200} />
+        imgUrl && <Image src={imgUrl} alt="profile" width={300} height={300} />
       )}
-
+      {uploading && (
+        <div className={styles.loader}>
+          <div className={styles.spinner}></div>
+          <span className="text-black">Loading...</span>
+        </div>
+      )}
       <div className={styles.containerImageTextPhoto}>
         <p className={styles.h1Welcome}>
           Te doy la bienvenida! Voy a guiarte en la construcción de tu portfolio

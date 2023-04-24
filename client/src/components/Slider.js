@@ -23,6 +23,7 @@ const Slider = () => {
             src="/img/img2.png"
           />
           <h3>Collin Smith Port</h3>
+          <p>@ SmithCollin.dev</p>
         </div>
         <div className={styles.card}>
           <Image
@@ -31,9 +32,19 @@ const Slider = () => {
             height={200}
             src="/img/img3.png"
           />
-          <h3>Título 3</h3>
+          <h3>Sarah Dayan Port</h3>
+          <p>@ Dayan.Sarah</p>
         </div>
         <div className={styles.card}>
+          <Image
+            alt="Imagen de prueba"
+            width={300}
+            height={200}
+            src="/img/img3.png"
+          />
+          <h3>Título 4</h3>
+        </div>
+        {/*   <div className={styles.card}>
           <Image
             alt="Imagen de prueba"
             width={300}
@@ -59,16 +70,7 @@ const Slider = () => {
             src="/img/img3.png"
           />
           <h3>Título 4</h3>
-        </div>
-        <div className={styles.card}>
-          <Image
-            alt="Imagen de prueba"
-            width={300}
-            height={200}
-            src="/img/img3.png"
-          />
-          <h3>Título 4</h3>
-        </div>
+        </div> */}
       </div>
     </div>
   );

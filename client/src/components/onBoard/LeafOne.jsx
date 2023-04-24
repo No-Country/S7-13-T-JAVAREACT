@@ -8,11 +8,23 @@ import { handleStacksServer } from "@/pages/api/auth/user";
 const LeafOne = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
+  const [mesage, setMesage] = useState();
   console.log(session);
   if (status === "unauthenticated") {
     router.push("/login");
   }
   const [stack, setStack] = useState([]);
+
+  const handleSaveStack = async () => {
+    const response = await handleStacksServer(stack);
+    if (response) {
+      setStack("");
+      console.log("Guardado exitosamente");
+      setMesage("Guardado exitosamente");
+    } else {
+      console.log("Error al guardar");
+    }
+  };
   console.log(stack);
   return (
     <div className={styles.containerImageText}>
@@ -40,12 +52,15 @@ const LeafOne = () => {
             value={stack}
           />
           <button
-            onClick={() => handleStacksServer(stack)}
+            onClick={() => handleSaveStack()}
             className={styles.button}
             type="submit"
           >
             Guardar
           </button>
+          <div>
+            <p className="text-white font-bold text-lg">{mesage && mesage}</p>
+          </div>
         </div>
       </div>
     </div>
